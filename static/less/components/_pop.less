@@ -1,0 +1,90 @@
+//模态窗口
+.modal-background {
+    background: url("@{images-url}black70.png");
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 20px 0;
+
+    &.fade{
+        visibility: hidden;
+        .modal-wrap{
+            transform: scale(0.8);
+            transition: transform .15s;
+        }
+
+        &.in{
+            visibility: visible;
+            .modal-wrap {
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+.modal-layer {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-position {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.modal-wrap {
+    width: 40%;
+    min-width: 650px;
+    margin: 0 auto;
+}
+
+.modal-head {
+    background-color: @bgColor-type1;
+    border-bottom: 1px solid @primary-BorderColor;
+    line-height: 48px;
+    padding-left: 20px;
+    font-size: @small-FontSize;
+    .clearfix();
+
+    > .modal-close {
+        .squareFontBox( @viceText-FontColor,@largest-FontSize,@bgColor-type1,48px,0,right,block );
+        cursor: pointer;
+        line-height: 52px;
+        border: none;
+        outline: none;
+
+        > i {
+            .form-notice-icon-font-family();
+            .inline-block();
+
+            &:before {
+                content: "\e070";
+            }
+        }
+
+        &:hover {
+            background-color: @bgColor-type1 * 0.95;
+            color: @default-FontColor * 0.95;
+
+            > i {
+                .animation-s( close-btn,0.4s,linear,0,1,normal,running,forwards );
+            }
+        }
+    }
+}
+
+.modal-body {
+    border-bottom: 3px solid @primary-BorderColor;
+    padding: 38px;
+    background-color: @bgColor-default;
+}
+
+.modal-open {
+    overflow: hidden;
+}

@@ -1,0 +1,106 @@
+@import "_normalize";       //项目引用样式初始化
+@import "_config";          //项目样式设定项
+@import "_mix";             //项目样式工具
+@import "_font";            //项目字体
+@import "_fonticon";        //项目字体图标
+@import "_sprite";          //项目雪碧图
+@import "_animate.less";    //项目引用CSS3动画库
+@import "_animation.less";    //交互CSS3动画
+
+//业务流程提示
+.notice-wrap {
+
+    &.in-modal {
+
+        &.success {
+
+            .notice-box {
+
+                > .notice-img {
+                    background: url("@{images-url}success_62x62.png") no-repeat;
+                }
+            }
+        }
+
+        &.waiting {
+
+            .notice-box {
+
+                > .notice-img {
+                    background: url("@{images-url}waiting_62x62.gif") no-repeat;
+                }
+            }
+        }
+
+        &.info {
+
+            .notice-box {
+
+                > .notice-img {
+                    background: url("@{images-url}info_62x62.png") no-repeat;
+                }
+            }
+        }
+
+        &.error {
+
+            .notice-box {
+
+                > .notice-img {
+                    background: url("@{images-url}error_62x62.png") no-repeat;
+                }
+            }
+        }
+    }
+}
+
+//数据统计部件
+.date-count-ul {
+
+    > li {
+
+        &.last-li {
+            border-right: none;
+        }
+    }
+}
+
+//步骤
+.step {
+    .icon-step_normal();
+    background-color: transparent;
+}
+
+.steps-wrap {
+
+    &.pass1 {
+
+        .step {
+
+            &.step1 {
+                .icon-step_active();
+                background-color: transparent;
+            }
+        }
+    }
+
+    &.pass2 {
+
+        .step {
+
+            &.step1,
+            &.step2 {
+                background-color: transparent;
+                .icon-step_active();
+            }
+        }
+    }
+
+    &.pass3 {
+
+        .step {
+            .icon-step_active();
+            background-color: transparent;
+        }
+    }
+}

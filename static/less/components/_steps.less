@@ -1,0 +1,147 @@
+//步骤
+.steps-box {
+    height: 64px;
+    position: relative;
+    margin-top: 21px;
+}
+
+.step {
+    position: absolute;
+    top: -21px;
+    .squareFontBox( @steps-bgColor1 + #333,@larger-FontSize,@steps-bgColor1,@step-height,50%,none,block );
+    font-weight: bold;
+    z-index: 1;
+
+    &.step1 {
+        left: 0;
+    }
+
+    &.step2 {
+        left: 50%;
+        margin-left: -27px;
+    }
+
+    &.step3 {
+        right: 0;
+    }
+}
+
+.step-bars {
+    font-size: 0;
+    line-height: 0;
+    background-color: @steps-bgColor1;
+    margin: 0 20px;
+    
+
+    > div {
+        height: 12px;
+        .inline-block();
+        .rounded( 30px );
+        width: 25%;
+    }
+}
+
+.step-title {
+    font-size: @smaller-FontSize;
+    color: @steps-bgColor1;
+    position: absolute;
+    top: 44px;
+    width: 134px;
+
+    &.title1 {
+        left: 0;
+    }
+
+    &.title2 {
+        left: 50%;
+        text-align:center;
+        margin-left: -67px;
+    }
+
+    &.title3 {
+        right: 0;
+        text-align: right;
+    }
+}
+
+.steps-wrap {
+    background-color: @bgColor-type1;
+    padding: 20px 40px;
+    border-bottom: 2px solid @primary-BorderColor * 0.95;
+
+    &.pass1 {
+
+        .step {
+
+            &.step1 {
+                background-color: @steps-bgColor2;
+                color: #fff;
+            }
+        }
+
+        .step-bars {
+
+            > div.bar1 {
+                background-color: @steps-bgColor2;
+            }
+        }
+
+        .step-title {
+
+            &.title1 {
+                color: @steps-bgColor2;
+            }
+        }
+    }
+
+    &.pass2 {
+
+        .step {
+
+            &.step1,
+            &.step2 {
+                background-color: @steps-bgColor2;
+                color: #fff;
+            }
+        }
+
+        .step-bars {
+
+            > div.bar1,
+            > div.bar2 {
+                .rounded( 0 );
+            }
+
+            > div.bar1,
+            > div.bar2,
+            > div.bar3 {
+                background-color: @steps-bgColor2;
+            }
+        }
+
+        .step-title {
+
+            &.title1,
+            &.title2 {
+                color: @steps-bgColor2;
+            }
+        }
+    }
+
+    &.pass3 {
+
+        .step {
+            background-color: @steps-bgColor2;
+            color: #fff;
+        }
+
+        .step-bars > div {
+            background-color: @steps-bgColor2;
+            .rounded( 0 );
+        }
+
+        .step-title {
+            color: @steps-bgColor2;
+        }
+    }
+}

@@ -1,0 +1,132 @@
+//银行卡列表
+.bankcard-list-wrap {
+    
+}
+
+.bankcard-list {
+    .reset-list( left,block,@smaller-FontSize,@line-height-base );
+    .clearfix();
+
+    .bank-box {
+        .clearfix();
+        padding-left: 30px;
+        position: relative;
+        margin: 10px 20px 0 20px;
+
+        > .bank-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    h3 {
+        margin: 10px 20px 0 20px;
+        .text-hide();
+    }
+
+    .bank-card-btn {
+        background-color: @primary-BtnColor;
+        border-bottom: 2px solid @primary-BtnColor * 0.8;
+        .rounded( 3px );
+        height: 24px;
+        padding: 0 10px;
+        .float-item( right,block );
+        .link-custom( #fff,#fff,none );
+        line-height: 22px;
+        margin-top: 3px;
+        font-size: @smallest-FontSize;
+    }
+
+    .work-tag {
+        font-size: @smallest-FontSize;
+        color: #b7aa7e;
+        .text-white-shadow( 0,1 );
+        position: absolute;
+        right: 20px;
+        bottom: 5px;
+        text-align: right;
+    }
+
+    .notwork-tag,
+    .waiting-tag {
+        color: #fff;
+        position: absolute;
+        left: -1px;
+        bottom: -1px;
+        height: 30px;
+        width: 210px;
+        background: url("@{images-url}black30.png");
+        .clearfix();
+        line-height: 30px;
+        .border-radius( 0,0,3px,3px );
+        padding: 0 20px;
+    }
+
+    .waiting-tag {
+        text-align: right;
+    }
+
+    > li {
+        position: relative;
+        border-style: solid;
+        border-width: 1px;
+        .rounded( 3px );
+        margin-left: 17px;
+        margin-bottom: 17px;
+
+        &.work {
+            .icon-card-bg1();
+            border-color: #f3e8c6;
+
+            .notwork-tag {
+                display: none;
+            }
+
+            .waiting-tag {
+                display: none;
+            }
+        }
+
+        &.notwork,
+        &.waiting {
+            .icon-card-bg2();
+            border-color: #e8e8e8;
+
+            .bank-box {
+                color: @viceText-FontColor + #222;
+            }
+
+            h3 {
+                color: @viceText-FontColor + #222;
+            }
+
+            .work-tag {
+                display: none;
+            }
+        }
+
+        &.notwork {
+
+            .waiting-tag {
+                display: none;
+            }
+        }
+
+        &.waiting {
+
+            .notwork-tag {
+                display: none;
+            }
+        }
+
+        &.add-card {
+            height: 110px;
+            width: 210px;
+            border: 1px dashed @primary-BorderColor * 0.9;
+            .rounded( 3px );
+            line-height: 110px;
+            text-align: center;
+        }
+    }
+}

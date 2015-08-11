@@ -1,0 +1,69 @@
+//图表
+.chart-title {
+    position: relative;
+    line-height: @small-FontSize + 6px;
+    font-size: @small-FontSize;
+    padding: 14px 50% 14px 12px;
+    background-color: @chart-bgColor-1;
+    border: 1px solid @chart-BorderColor1;
+    
+    > small {
+        font-size: @smallest-FontSize;
+        padding-left: 10px;
+    }
+
+    > .chart-title-btns {
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        .clearfix();
+
+        > .btn {
+            .float-item( left,block );
+            margin-left: 10px;
+
+            &.current {
+                background-color: @secondary-BtnColor;
+                border-color: @secondary-BtnColor * 0.8;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.chart-wrap {
+    margin: 20px;
+}
+
+.chart-legends {
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+
+    .chart-legend {
+        position: relative;
+        font-size: @smaller-FontSize;
+        color: @heading-FontColor;
+        line-height: 24px;
+        padding: 0 24px 0 18px;
+        .inline-block();
+
+        > b {
+            .square( 10px );
+            .rounded( 50% );
+            display: block;
+            position: absolute;
+            top: 50%;
+            margin-top: -5px;
+            left: 0;
+
+            &.legendone {
+                background-color: @viceText-FontColor;
+            }
+
+            &.legendtwo {
+                background-color: @info-FontColor;
+            }
+        }
+    }
+}

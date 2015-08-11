@@ -1,0 +1,71 @@
+//数据统计部件
+.data-count-wrap {
+    padding: 30px 0;
+    border: 1px solid @primary-BorderColor;
+    border-top: none;
+    border-bottom-width: 2px;
+}
+
+.date-count-ul {
+    .reset-list( left,block,@smaller-FontSize,@line-height-base );
+    .clearfix();
+    display: block;
+
+    > li {
+        height: 60px;
+        border-right: 1px solid @primary-BorderColor;
+        padding: 0 30px;
+        overflow: hidden;
+        width: 35%;
+
+        > h5 {
+            padding-left: 80px;
+            position: relative;
+            font-size: @smallest-FontSize !important;
+            color: @viceText-FontColor;
+            text-align: right;
+
+            > span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: @heading-FontColor;
+                font-size: @smaller-FontSize !important;
+                line-height: 1;
+            }
+        }
+
+        > h2 {
+            color: @warning-FontColor;
+            text-align: right;
+            padding-top: 12px;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+
+        &.count-title {
+            position: relative;
+            line-height: 60px;
+            overflow: visible;
+            width: auto;
+
+            .arrows {
+                .arrow-left-or-right( border-left,8px,8px,#fff );
+                position: absolute;
+                top: 50%;
+                margin-top: -8px;
+                right: -8px;
+            }
+
+            .arrows-shadow {
+                .arrow-left-or-right( border-left,10px,10px,@primary-BorderColor );
+                position: absolute;
+                top: 50%;
+                margin-top: -10px;
+                right: -10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+{% extends "_layout/layout.html" %}
+
+{# 加载组件 #}
+{# import "_components/modal.html" as modal #}
+
+{# 更多api请参考http://mozilla.github.io/nunjucks/cn/templating.html #}
+
+{# 页面css文件 #}
+{% block css %}
+	<!-- <link rel="stylesheet" href="../css/index.css"> -->
+{% endblock %}
+
+{# 页面内联css文件 #}
+{% block pageCss %}
+	<!--<style>
+		.demo{}
+	</style>-->
+{% endblock %}
+
+{# body内容 #}
+{% block body %}
+	body内容写在这里aaabbbccc
+	
+	<!-- 弹出层 -->
+	{# modal({
+		style: 'display-none',
+		id: 'testModal',
+		title: '<i class="icon-info"></i>提示',
+		content: '<div>哈哈哈</div>',
+		buttons: {
+			style: 'margin-top-40',
+			items: [
+				{
+					id: 'ok',
+					style: 'btn-primary',
+					text: '确定'
+				},
+				{
+					id: 'cancel',
+					style: 'btn-secondary',
+					text: '取消'
+				}
+			]
+		}
+	})#}
+
+{% endblock %}
+
+{# 页面js文件 #}
+{% block js %}
+	<!-- <script src="../js/index.js"></script> -->
+{% endblock %}
+
+{# 页面内联js #}
+{% block pageJs %}
+	<!--<script>
+		.demo{}
+	</script>-->
+{% endblock %}

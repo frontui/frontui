@@ -1,0 +1,126 @@
+//按钮类
+.plural-btns {
+    font-size: 0;
+    line-height: 0;
+    .clearfix();
+
+    > .btn {
+        margin-right: 10px;
+    }
+}
+
+.btn-with-viceLink {
+    position: relative;
+    .inline-block();
+
+    > .btn-vicelink {
+        position: absolute;
+        top: 12px;
+        right: -20px;
+        .link-standard();
+        display: block;
+        width: 0;
+        text-align: left;
+        white-space: nowrap;
+        font-size: @smaller-FontSize;
+        line-height: @line-height-base;
+    }
+}
+
+.btn {
+    .inline-block();
+    .rounded( 5px );
+    width: @base-BtnWidth;
+    height: @base-BtnHeight;
+    outline: none;
+    border: none;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    text-align: center;
+    font-size: @small-FontSize;
+    line-height: @base-BtnHeight;
+    .link-custom( #fff,#fff,none );
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+
+    &.default {
+        background-color: @default-BtnColor;
+        border: 1px solid @default-BtnColor * 0.7;
+        border-bottom-width: 2px;
+        color: @default-FontColor;
+
+        &:hover,
+        &:active,
+        &.current {
+            border-color: @default-BtnColor * 0.6;
+        }
+    }
+
+    &.primary {
+        background-color: @primary-BtnColor;
+        border-color: @primary-BtnColor * 0.8;
+
+        &:hover,
+        &:active,
+        &.current {
+            background-color: @primary-BtnColor * 0.95;
+            border-color: @primary-BtnColor * 0.7;
+        }
+    }
+
+    &.secondary {
+        background-color: @secondary-BtnColor;
+        border-color: @secondary-BtnColor * 0.8;
+
+        &:hover,
+        &:active,
+        &.current {
+            background-color: @secondary-BtnColor * 0.95;
+            border-color: @secondary-BtnColor * 0.7;
+        }
+    }
+
+    &.thirdly {
+        background-color: @thirdly-BtnColor;
+        border-color: @thirdly-BtnColor * 0.8;
+
+        &:hover,
+        &:active,
+        &.current {
+            background-color: @thirdly-BtnColor * 0.95;
+            border-bottom-color: @thirdly-BtnColor * 0.7;
+        }
+    }
+
+    &.disabled {
+        background-color: @disabled-BtnColor;
+        border-color: @disabled-BtnColor * 0.9;
+        color: @viceText-FontColor;
+        cursor: default;
+    }
+
+    &.links {
+        width: auto;
+        padding: 0 10px;
+        .link-standard();
+        border: none;
+        font-size: @smaller-FontSize;
+
+        &.small-btn {
+            border-color: transparent;
+            padding: 0;
+        }
+    }
+}
+
+.small-btn {
+    width: @smallsize-BtnWidth;
+    height: @smallsize-BtnHeight;
+    border-style: solid !important;
+    border-width: 1px !important;
+    line-height: @smallsize-BtnHeight - 2px;
+    font-size: @smallest-FontSize !important;
+    .rounded( 3px );
+}

@@ -1,0 +1,44 @@
+//主导航
+.main-nav-wrap {
+    
+}
+
+.main-nav {
+    .reset-list( left,block,@smaller-FontSize,@main-nav-height );
+    .clearfix();
+
+    > li {
+        width: 25%;
+
+        > a {
+            .link-custom( @default-FontColor,#fff,none );
+            display: block;
+            text-align: center;
+            height: @main-nav-height + 2px;
+            border-top: 2px solid @primary-BorderColor * 0.9;
+            border-left: 1px solid @primary-BorderColor * 0.9;
+            border-right: 1px solid #fff;
+            background-color: @main-nav-bgColor1;
+
+            &:hover {
+                background-color: @main-nav-bgColor2;
+                border-top-color: @main-nav-bgColor2 * 0.8;
+                border-left-color: @main-nav-bgColor2 * 0.8;
+            }
+        }
+
+        &.current {
+
+            > a {
+                background-color: @main-nav-bgColor2;
+                border-top-color: @main-nav-bgColor2 * 0.8;
+                border-left-color: @main-nav-bgColor2 * 0.8;
+                color: #fff;
+            }
+        }
+
+        &:last-child > a {
+            border-right: none;
+        }
+    }
+}

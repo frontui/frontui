@@ -1,0 +1,117 @@
+//业务流程提示
+.notice-box {
+    position: relative;
+    .inline-block();
+    padding-left: 108px;
+    text-align: left;
+
+    > .notice-img {
+        .square( 77px );
+        display: block;
+        outline: none;
+        border: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    > h3 {
+        font-size: @h3-FontSize;
+        font-weight: bold;
+        padding: 6px 0;
+    }
+
+    > p {
+        padding-bottom: 6px;
+    }
+
+    .link-border {
+        border-left: 1px solid @primary-BorderColor;
+        padding-left: 10px;
+        margin-left: 6px;
+    }
+}
+
+.notice-wrap {
+    padding: 48px 0;
+    border: 1px solid @primary-BorderColor;
+    border-bottom-width: 2px;
+    text-align: center;
+
+    &.success {
+
+        .notice-box {
+
+            > .notice-img {
+                background: url("@{images-url}success.png") no-repeat;
+            }
+
+            > h3 {
+                color: @success-FontColor1;
+            }
+        }
+    }
+
+    &.waiting {
+
+        .notice-box {
+
+            > .notice-img {
+                background: url("@{images-url}waiting.gif") no-repeat;
+            }
+
+            > h3 {
+                color: @info-FontColor;
+            }
+        }
+    }
+
+    &.error {
+
+        .notice-box {
+
+            > .notice-img {
+                background: url("@{images-url}error.png") no-repeat;
+            }
+
+            > h3 {
+                color: @error-FontColor1;
+            }
+        }
+    }
+
+    &.info {
+
+        .notice-box {
+
+            > .notice-img {
+                background: url("@{images-url}info.png") no-repeat;
+            }
+
+            > h3 {
+                color: @info-FontColor;
+            }
+        }
+    }
+
+    &.in-modal {
+        border: none !important;
+        padding: 0;
+
+        .notice-box {
+            padding-left: 88px;
+
+            > .notice-img {
+                .square( 62px );
+                background-size: cover;
+            }
+
+            > h3 {
+                color: @heading-FontColor !important;
+                font-size: @small-FontSize !important;
+                font-weight: 500;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}

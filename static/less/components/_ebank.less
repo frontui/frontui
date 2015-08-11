@@ -1,0 +1,119 @@
+//网上银行选择
+.ebank-wrap {
+    
+}
+
+.ebanks {
+    .reset-list( left,block,@smaller-FontSize,@line-height-base );
+    .clearfix();
+
+    > li {
+        padding: 0 36px 20px 0;
+    }
+
+    .more-ebank {
+        cursor: pointer;
+        width: 180px;
+        line-height: 46px;
+        height: 48px;
+        text-align: center;
+        display: block;
+        color: @link-FontColor;
+        border: 1px solid @ebank-label-BorderColor1;
+    }
+
+    .ebank-label {
+        cursor: pointer;
+        border: 1px solid @ebank-label-BorderColor1;
+        width: 180px;
+        height: 48px;
+        text-align: center;
+        display: block;
+        position: relative;
+
+        > i {
+            display: none;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            font-size: 12px;
+            z-index: 2;
+            color: #fff;
+        }
+
+        > .etag {
+            display: block;
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            height: 48px;
+            width: 20px;
+            background-color: #a8ceff;
+            color: #fff;
+            font-size: @smallest-FontSize;
+            padding-top: 7px;
+            .word-wrap();
+
+        }
+
+        &:hover {
+            border: 2px solid @ebank-label-BorderColor2;
+            overflow: hidden;
+
+            > .etag {
+                height: 46px;
+                width: 19px;
+                padding-top: 6px;
+            }
+        }
+    }
+
+    .ebank-logo {
+        height: 38px;
+        width: 160px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -19px;
+        margin-left: -80px;
+        background: url("@{images-url}bank.png") no-repeat;
+        display: block;
+    }
+
+    > li.active {
+
+        .ebank-label {
+            border: 2px solid @ebank-label-BorderColor2;
+            overflow: hidden;
+
+            > i {
+                display: block;
+                .ebank-icon-font-family();
+
+                &:after {
+                    position: absolute;
+                    content: '';
+                    bottom: 0;
+                    right: 0;
+                    width: 0;
+                    height: 0;
+                    border: 10px solid transparent;
+                    border-right-color: #f42829;
+                    border-bottom-color: #f42829;
+                }
+
+                &:before {
+                    content: "\e28a";
+                    position: relative;
+                    z-index: 2;
+                }
+            }
+
+            > .etag {
+                height: 46px;
+                width: 19px;
+                padding-top: 6px;
+            }
+        }
+    }
+}

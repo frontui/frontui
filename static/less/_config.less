@@ -1,0 +1,220 @@
+/*
+--- config ---
+*/
+
+@charset "UTF-8";
+
+//图片所在目录
+@images-url:   "../images/";
+
+//字体图标所在目录
+@iconfont-url: "../iconfont/";
+
+
+//主要元素色调
+@domColor1: #f57403;  //多用于警告，突显文本色调
+@domColor2: #3c84ed;  //多用于超链接默认色调
+@domColor3: #54d393;  //多用于成功类提示，按钮背景色调,表单正确边框色调
+@domColor4: #05ae59;  //多用于成功类提示，表单数据突显
+@domColor5: #de5252;  //多用于失败类提示
+@domColor6: #fd8832;  //多用于按钮背景色调，表单出错边框色调
+@domColor7: #7699c8;  //多用于信息类提示，按钮背景色调，表单获取焦点边框色调
+@domColor8: #e9ebed;  //多用于按钮背景色调
+
+
+//基础背景色
+@base-BgColor: #fff;
+    //默认背景色
+    @bgColor-default: @base-BgColor;
+    //衍生背景色（1）
+    @bgColor-type1: @base-BgColor * 0.96;    //#f5f5f5
+    //衍生背景色（2）
+    @bgColor-type2: @base-BgColor * 0.99;    //#fcfcfc
+    //衍生背景色（3）
+    @bgColor-type3: @domColor8;
+
+    //表格背景色调（1）
+    @table-bgColor-1: @bgColor-type1;
+    //表格背景色调（2）
+    @table-bgColor-2: @bgColor-type2;
+
+    //表单背景色调（1）
+    @form-bgColor-1: @bgColor-type1;
+    @form-bgColor-2: @bgColor-type2;
+
+    //图表背景色调（1）
+    @chart-bgColor-1: @bgColor-type1;
+
+    //标签页背景色调（1）
+    @tabs-bgColor-1: @bgColor-type1;
+    @tabs-bgColor-2: @bgColor-default;
+
+    //分页背景色调（1）
+    @pagination-bgColor-1: @domColor7;
+
+    //警示背景色调（warning）
+    @alert-bgColor-warning: #fef3cc;
+
+    //步骤图背景色调
+    @steps-bgColor1: #a4aab6;
+    @steps-bgColor2: @domColor3;
+
+    //主导航背景色调
+    @main-nav-bgColor1: @bgColor-type3;
+    @main-nav-bgColor2: @domColor7;
+
+    //tooltips背景色调
+    @tooltips-bgColor1: #fffbec;
+
+
+//基础文本色调
+@base-FontColor: #999;
+    //标题色调
+    @heading-FontColor: @base-FontColor * 0.335;    //#333
+    //默认文本色调
+    @default-FontColor: @base-FontColor * 0.665;    //#666
+    //副文本色调
+    @viceText-FontColor: @base-FontColor;
+    //表单赋值色调
+    @formValue-FontColor: @base-FontColor * 0.335;    //#333
+    //警告文本色调
+    @warning-FontColor: @domColor1;
+    //成功提示色调（底色，图标）
+    @success-FontColor1: @domColor3;
+    //成功提示色调（文本）
+    @success-FontColor2: @domColor4;
+    //错误提示色调
+    @error-FontColor1: @domColor5;
+    //错误提示色调
+    @error-FontColor2: @domColor6;
+    //信息提示色调
+    @info-FontColor: @domColor7;
+    //链接文本色调
+    @link-FontColor: @domColor2;
+    //链接文本（鼠标经过）色调
+    @linkHover-FontColor: darken( @link-FontColor, 15% );
+
+
+//基础字体尺寸
+@base-FontSize: 14px;
+
+    //大字体尺寸（1）
+    @largest-FontSize: floor( ( @base-FontSize * 2.45 ) );  // ~34px
+    //大字体尺寸（2）
+    @larger-FontSize: ceil( ( @base-FontSize * 1.7 ) );     // ~24px
+    //大字体尺寸（3）
+    @large-FontSize: floor( ( @base-FontSize * 1.3 ) );     // ~18px
+
+    //小字体尺寸（1）
+    @small-FontSize: ceil( ( @base-FontSize * 1.14 ) );     // ~16px
+    //小字体尺寸（2）
+    @smaller-FontSize: @base-FontSize;                      // ~14px
+    //小字体尺寸（3）
+    @smallest-FontSize: floor( ( @base-FontSize * 0.87 ) ); // ~12px
+
+    //h1标题尺寸
+    @h1-FontSize: @largest-FontSize;
+    //h2标题尺寸
+    @h2-FontSize: @larger-FontSize;
+    //h3标题尺寸
+    @h3-FontSize: @large-FontSize;
+    //h4标题尺寸
+    @h4-FontSize: @small-FontSize;
+    //h5标题尺寸
+    @h5-FontSize: @smaller-FontSize;
+    //h6标题尺寸
+    @h6-FontSize: @smallest-FontSize;
+    
+    //表单字体尺寸
+    @forms-FontSize: @smaller-FontSize;
+
+
+//基础字符行高
+@line-height-base: 1.428571429;
+
+
+//基础边框色调
+@base-BorderColor: #e8e8e8;
+    //主要边框色调
+    @primary-BorderColor: @base-BorderColor;
+    //次要边框色调
+    @secondary-BorderColor: #f1f3f5;
+
+    //表单默认边框色调
+    @form-default-BorderColor: @base-BorderColor;
+    //表单错误边框色调
+    @form-error-BorderColor: @domColor6;
+    //表单正确边框色调
+    @form-correct-BorderColor: @domColor3;
+    //表单成为焦点边框色调
+    @form-focus-BorderColor: @domColor7 + #292929;
+
+    //表格边框色调（1）
+    @table-BorderColor1: @primary-BorderColor;
+    //表格边框色调（2）
+    @table-BorderColor2: @secondary-BorderColor;
+
+    //图表边框色调（1）
+    @chart-BorderColor1: @primary-BorderColor;
+    //图表边框色调（2）
+    @chart-BorderColor2: @secondary-BorderColor;
+
+    //标签页边框色调（1）
+    @tabs-BorderColor1: @primary-BorderColor;
+    //标签页边框色调（2）
+    @tabs-BorderColor2: @domColor7;
+
+    //警示边框色调（warning）
+    @alert-BorderColor-warning: #f5dfb1;
+
+    //tooltips边框色调
+    @tooltips-BorderColor1: #f5dfb1;
+
+    //网上银行选择label边框色调
+    @ebank-label-BorderColor1: @primary-BorderColor;
+    @ebank-label-BorderColor2: @domColor5;
+
+
+//基础按钮色调
+@base-BtnColor: #fff;
+    //默认按钮色调
+    @default-BtnColor: @base-BtnColor;
+    //首选按钮色调
+    @primary-BtnColor: @domColor6;
+    //次选按钮色调
+    @secondary-BtnColor: @domColor7;
+    //再次按钮色调
+    @thirdly-BtnColor: @domColor3;
+    //失效、未激活按钮色调
+    @disabled-BtnColor: @domColor8;
+
+
+//基础按钮尺寸
+@base-BtnWidth: 198px;
+@base-BtnHeight: 44px;
+    //小型按钮尺寸
+    @smallsize-BtnWidth: 64px;
+    @smallsize-BtnHeight: 30px;
+
+
+//表单尺寸
+@form-control-label-width: 170px;
+@form-control-height: 40px;
+@form-control-verify-btn-width: 118px;
+@form-control-withdrawFull-btn-width: 94px;
+
+
+//分页尺寸
+@pagination-height: 24px;
+
+
+//步骤图尺寸
+@step-height: 54px;
+
+
+//主导航尺寸
+@main-nav-height: 44px;
+
+
+//基础页面框架宽度
+@base-BodyWidth: 0px;

@@ -1,0 +1,657 @@
+/* !
+* 日期选择器
+* @Site：http://sentsin.com/layui/laydate
+*/
+
+
+
+//@import "_config";          //项目样式设定项
+//@import "_mix";             //项目样式工具
+
+@laydate-color: @domColor7;
+@laydate-color-orange: @domColor6;
+@laydate-color-blue: @domColor2;
+@laydate-color-green: @domColor4;
+@laydate-color-red: @domColor5;
+
+
+// body
+.laydate_body {
+   // 日历控件样式
+   .laydate_box{
+     width: 240px;
+     font:12px '\5B8B\4F53',simsun;
+     z-index:99999999;
+     *margin:-2px 0 0 -2px;
+     *overflow:hidden;
+     background: #ffffff;
+     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+     color:  @laydate-color;
+
+     // 清除容器内所有元素外边距
+     *{
+      margin: 0;
+      padding: 0;
+      .border-box(content-box);
+     }
+
+     // 重置li
+     li{
+       list-style: none;
+     }
+
+     // 链接
+     a{
+       text-decoration: none;
+       blur:~"expression(this.onFocus=this.blur())";
+       cursor:pointer;
+       color:  @laydate-color;
+      
+       &:hover{
+        text-decoration: none;
+        color: #666;
+       }
+     }
+
+     cite, label{
+      position:absolute;
+      width:0;
+      height:0;
+      border: 5px dashed transparent;
+      overflow:hidden;
+      cursor:pointer;
+     }
+    
+     // 输入框
+     input{
+      float:left; 
+      height:24px; 
+      line-height:24px; 
+      text-align:center; 
+      border:none; 
+      cursor:pointer;
+      color: #fff;
+      outline:0;
+      font-size:14px;
+      background-color:#fff;
+     }
+
+     // 不可点击文字
+     .laydate_void{
+      cursor: ~"text!important";
+      color: lighten( @laydate-color,5%);
+     }
+
+     .laydate_yms,.laydate_time{
+      display: none;
+     }
+
+     #laydate_hms,.laydate_time {
+       border:1px solid #ccc;
+     }
+
+    .laydate_ym .laydate_yms, .laydate_time {
+      box-shadow: 2px 2px 5px rgba(0,0,0,.1);
+    }
+
+    // 显示元素
+    .laydate_show{
+     display: block;
+    }
+
+   // 已选
+   .laydate_click{
+     background-color:@laydate-color;
+     color:#fff;
+   }
+
+    // 顶部栏
+    .laydate_top{
+     position: relative;
+     height: 26px;
+     padding: 5px;
+     *width: 100%;
+     z-index: 99;
+      border-top:1px solid @laydate-color;
+      background-color:@laydate-color;
+    }
+
+     // 选择器
+     .laydate_yms{
+       border:1px solid @laydate-color;
+       background-color:@laydate-color;
+       color:#fff;
+
+       .laydate_chdown{
+         border-top:1px solid darken(@laydate-color, 1%);
+         border-bottom:none;
+       }
+     }
+
+    // 年月选择器
+    .laydate_ym{
+      position: relative;
+      float: left;
+      height: 24px;
+      cursor: pointer;
+      border-top:1px solid @laydate-color;
+      background-color:@laydate-color;
+
+      // 年月弹层选择器
+      .laydate_yms {
+       position:absolute;
+       left: -1px;
+       top: 24px;
+       height:181px;
+     }
+
+      label{
+        right: 28px;
+        top:50%;
+        margin:-2px 0 0 -5px;
+        border-top-style:solid;
+        border-top-color: #fff;
+      }
+
+      input{
+        background: transparent;
+      }
+    }
+
+    // 年选择器
+    .laydate_y {
+      width: 121px;
+      margin-right: 6px;
+
+      input{
+       width: 64px;
+       margin-right: 15px;
+       font-family: simsun;
+      }
+
+      .laydate_yms {
+        width: 121px;
+        text-align: center;
+       
+        a {
+         position: relative;
+         display: block;
+         height: 20px;
+
+          background: lighten(@laydate-color, 3%);
+
+          border-bottom:1px solid darken(@laydate-color, 1%);;
+
+          &:hover{
+            background: lighten(@laydate-color, 5%);
+          }
+        }
+
+        ul{
+          padding: 0;
+          height: 139px;
+          *overflow: hidden;
+          li {
+           float: left;
+           width: 60px;
+           height: 20px;
+           line-height: 20px;
+           text-overflow: ellipsis;
+           overflow: hidden;
+           word-spacing: nowrap;
+
+            &:hover{
+              background: lighten(@laydate-color, 10%);
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    // 月选择器
+    .laydate_m{
+      width: 99px;
+
+      .laydate_yms{
+        padding: 0;
+        width: 99px;
+
+        span{
+          display: block;
+          float: left;
+         width: 42px;
+         margin: 5px 0 0 5px;
+         line-height: 24px;
+         text-align: center;
+
+          &:hover{
+            color: #fff;
+            background: lighten(@laydate-color, 10%);
+          }
+        }
+      }
+
+      input {
+        width: 42px;
+        margin-right: 15px;
+      }
+    }
+
+    // 左右选择切换
+    .laydate_choose {
+      display: block;
+      float: left;
+      position: relative;
+      width: 20px;
+      height: 24px;
+
+      border-left:1px solid @laydate-color;
+
+      &:hover{
+        background: lighten(@laydate-color, 10%);
+      }
+
+      input{
+        background: transparent;
+      }
+
+      cite{
+       left: 50px;
+       top: 50%;
+      }
+    }
+
+     .laydate_chprev{
+       border-left:none;
+       border-right:1px solid @laydate-color;
+
+       cite{
+         margin:-5px 0 0 -7px;
+         border-right-style:solid;
+         border-right-color:#fff;
+       }
+     }
+     
+     .laydate_chtop{
+       cite{
+         margin:-7px 0 0 -5px; 
+         border-bottom-style:solid;
+         border-bottom-color: #fff;
+       }
+     }
+
+     .laydate_chdown{
+       cite{
+         top:50%; margin:-2px 0 0 -5px;
+         border-top-style:solid;
+         border-top-color: #fff;
+       }
+     }
+
+      .laydate_tab{
+        cite{left:50%; top:50%;}
+      }
+
+      .laydate_chnext{
+        cite{
+          margin:-5px 0 0 -2px;
+          border-left-style:solid;
+          border-left-color:#fff;
+        }
+      }
+
+
+     // 日历表格
+     .laydate_table{
+        width: 240px;
+         border-collapse: collapse;
+         border-spacing: 0;
+          border:1px solid #ccc;
+       border-top:none;
+       border-bottom:none;
+
+       .border-box();
+
+       .laydate_nothis{color:#999;}
+
+
+
+       td{
+         width: 31px;
+         height: 21px;
+         line-height: 21px;
+         text-align: center;
+         cursor: pointer;
+         color:@laydate-color;
+
+         &:hover{
+           color: #fff;
+           background: lighten(@laydate-color, 10%);
+         }
+
+         &.laydate_click{
+           background-color:@laydate-color;
+           color:#fff;
+         }
+       }
+
+       thead{
+         height: 21px;
+         line-height: 21px;
+         border-bottom:1px solid #ccc;
+
+         th {
+           font-weight: 400;
+           text-align: center;
+         }
+       }
+     }
+
+     // 底部时间选择&按钮
+     .laydate_bottom {
+       position: relative;
+       height: 22px;
+       line-height: 20px;
+       padding: 5px;
+       font-size: 12px;
+       border:1px solid #ccc;
+       border-top:none;
+
+       // 时分秒
+       #laydate_hms {
+         position: relative;
+         z-index: 1;
+         float: left;
+         background-color:#fff;
+       }
+
+       li{
+         float: left;
+         height: 20px;
+         line-height: 20px;
+         border-right: none;
+         font-weight: 700;
+       }
+
+       .laydate_sj{
+         width: 31px;
+         text-align: center;
+         font-weight: 500;
+         border-right:1px solid #ccc;
+         background-color:#fff;
+       }
+
+       input{
+         float: left;
+         width: 21px;
+         height: 20px;
+         line-height: 20px;
+         border: none;
+         text-align: center;
+         cursor: pointer;
+         font-size: 12px;
+         font-weight: 400;
+
+         background-color:#fff;
+         color:@laydate-color;
+       }
+
+       // 弹层title
+       .laydte_hsmtex{
+         height: 20px;
+         line-height: 20px;
+         text-align: center;
+
+         // 关闭按钮
+         span{
+           position: absolute;
+           width: 20px;
+           top: 0;
+           right: 0;
+           cursor: pointer;
+
+           &:hover{
+             font-size: 14px;
+           }
+         }
+       }
+
+       // 按钮
+       .laydate_btn{
+         position: absolute;
+         right: 5px;
+         top: 5px;
+         border-right: 1px solid #ccc;
+
+         a{
+           float: left;
+           height: 20px;
+           padding: 0 6px;
+           border: 1px solid #ccc;
+           border-right:none;
+           background-color:#fff;
+
+           &:hover{
+             background-color:#F6F6F6;
+             color: darken(@laydate-color, 20%);
+           }
+         }
+       }
+
+       .laydate_v {
+         position: absolute;
+         left: 10px;
+         top: 6px;
+         font-family: Courier;
+         z-index: 0;
+         color: #999;
+       }
+
+       .laydte_hsmtex{
+         border-bottom:1px solid #ccc;
+       }
+
+     }
+
+     // 时分秒弹层
+     .laydate_time {
+       position: absolute;
+       left: 5px;
+       bottom: 26px;
+       width: 129px;
+       height: 125px;
+       *overflow: hidden;
+       background-color:#fff;
+
+       // 时分秒项
+       .laydate_hmsno{
+         padding: 5px 0 0 5px;
+
+         span{
+           display: block;
+           float: left;
+           width: 24px;
+           height: 19px;
+           line-height: 19px;
+           text-align: center;
+           cursor: pointer;
+           *margin-bottom: -5px;
+
+           &:hover{
+             color: #fff;
+             background: lighten(@laydate-color, 10%);
+           }
+         }
+       }
+
+       // 分，秒
+       &.laydate_time1{
+         width: 226px;
+         height: 152px;
+
+         .laydate_hmsno{
+           padding: 6px 0 0 8px;
+
+           span{
+             width: 21px;
+             height: 20px;
+             line-height: 20px;
+
+
+           }
+         }
+       }
+
+     }
+
+     // 时间格式提示
+     .laydate_msg{
+       float: left;
+       bottom: 67px;
+       width: 141px;
+       height: auto;
+       overflow: hidden;
+
+       p{
+         padding: 5px 10px;
+       }
+     }
+
+     // 橙色
+     .skin(orange);
+     // 蓝色
+     .skin(blue);
+     // 绿色
+     .skin(green);
+     // 红色
+     .skin(red);
+   }
+}
+
+// 皮肤配色
+// =================
+.skin(@color){
+  @var: 'laydate-color-@{color}';
+  @skin-color: @@var;
+  &_@{color}{
+
+    color: @skin-color;
+
+    .laydate_click{
+      background: @skin-color;
+    }
+    
+    .laydate_table{
+      border-color: @skin-color;
+      td{
+        color: @skin-color;
+
+        &:hover{
+          background: lighten(@skin-color, 10%);
+        }
+
+        &.laydate_click{
+          background: @skin-color;
+        }
+      }
+
+      thead{
+        border-color: #e5e5e5;
+      }
+    }
+
+    .laydate_top,
+    .laydate_ym{
+      border-top-color: @skin-color;
+      background-color: @skin-color;
+    }
+
+    .laydate_choose{
+        border-left-color: @skin-color;
+
+        &:hover{
+          background: lighten(@skin-color, 10%);
+        }
+    }
+
+    .laydate_chprev{
+      border-right-color: @skin-color;
+    }
+    
+    .laydate_bottom {
+
+      border-color: @skin-color;
+
+      input{
+        color: @skin-color;
+      }
+
+      .laydate_btn{
+        a{
+          color: @skin-color;
+
+          &:hover{
+            color: darken(@skin-color, 3%);
+          }
+        }
+      }
+
+      .laydate_time{
+        .laydate_hmsno {
+          span{
+            &:hover{
+              background: lighten(@skin-color, 10%);
+            }
+          }
+        }
+      }
+
+
+    }
+    
+    .laydate_yms{
+      border-color: @skin-color;
+      background: lighten(@skin-color, 5%);
+    }
+    
+    .laydate_void{
+      color: lighten(@skin-color, 10%);
+    }
+
+    .laydate_y{
+      .laydate_yms{
+
+        a{
+          border-color: lighten(@skin-color, 2%);
+          background: lighten(@skin-color, 5%);
+
+          &:hover{
+            background: lighten(@skin-color, 10%);
+          }
+        }
+
+        ul{
+          li{
+            &:hover{
+              background: lighten(@skin-color, 10%);
+            }
+          }
+        }
+      }
+    }
+
+    .laydate_m{
+      .laydate_yms{
+        span{
+          &:hover{
+            background: lighten(@skin-color, 10%);
+          }
+        }
+      }
+    }
+
+  }
+}
+
+

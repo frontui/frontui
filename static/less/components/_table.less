@@ -1,0 +1,138 @@
+//表格类
+.tables-title {
+    position: relative;
+    height: 46px;
+    line-height: 44px;
+    font-size: @small-FontSize;
+    padding: 0 50% 0 12px;
+    background-color: @table-bgColor-1;
+    border-bottom: 2px solid @table-BorderColor1;
+
+    > .table-title-btns {
+        position: absolute;
+        top: 16px;
+        right: 6px;
+        .clearfix();
+
+        > a {
+            .link-standard();
+            .float-item( left,block );
+            padding: 0 6px;
+            border-left: 1px solid @primary-BorderColor * 0.9;
+            font-size: @smallest-FontSize;
+            line-height: @smallest-FontSize;
+
+            &:first-child {
+                border-left: none;
+            }
+        }
+    }
+}
+
+.table-wrap {
+    background-color: @bgColor-default;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    font-size: @smallest-FontSize;
+    table-layout: fixed;
+
+    .table-checked-all {
+        position: relative;
+        display: block;
+        padding-left: 20px;
+        text-align: left;
+        cursor: pointer;
+
+        > input[type="checkbox"] {
+            position: absolute;
+            top: 1px;
+            left: 0;
+        }
+    }
+
+    .table-ctrls {
+        position: relative;
+        color: @link-FontColor;
+        cursor: pointer;
+
+        .caret-down {
+            border-top-color: @link-FontColor;
+            margin-left: 5px;
+        }
+
+        > .ctrls {
+            display: none;
+            position: absolute;
+            top: -5px;
+            left: -13px;
+            background-color: #fff;
+            border: 1px solid @primary-BorderColor;
+            width: 100%;
+
+            > a {
+                display: block;
+                height: 24px;
+                line-height: 24px;
+                .link-custom( @link-FontColor,#fff,none );
+                text-align: center;
+
+                &:hover {
+                    background-color: @primary-BtnColor;
+                }
+            }
+        }
+
+        &:hover > .ctrls {
+            display: block;
+        }
+    }
+
+    th {
+        padding: 12px 10px 11px 10px;
+        border-bottom: 1px solid @table-BorderColor1;
+        background-color: @bgColor-default;
+
+        .th-cut {
+            color: @viceText-FontColor + #222;
+            margin: 0 5px;
+        }
+    }
+
+    td {
+        text-align: center;
+        padding: 12px 10px 11px 10px;
+        border-bottom: 1px solid @table-BorderColor2;
+        .word-wrap();
+
+        > input[type="checkbox"] {
+            vertical-align: middle;
+        }
+    }
+
+    tr {
+        background-color: @table-bgColor-2;
+
+        &:nth-child(2n) {
+            background-color: @bgColor-default;
+        }
+    }
+
+    &.inverse {
+
+        th {
+            background-color: @table-bgColor-1;
+            border-bottom: 2px solid @table-BorderColor1;
+        }
+
+        tr {
+            background-color: @bgColor-default;
+
+            &:nth-child(2n) {
+                background-color: @table-bgColor-2;
+            }
+        }
+    }
+}

@@ -1,0 +1,134 @@
+//标签页
+.tabs-wrap {
+    .clearfix();
+    position: relative;
+
+    .tabs {
+        .reset-list( none,inline-block,0,0 );
+        text-align: center;
+
+        > li {
+
+            > .tabs-btn {
+                display: block;
+            }
+        }
+    }
+
+    .tab-search-wrap {
+        position: absolute;
+        top: 7px;
+        right: 10px;
+
+        .tab-search-control-width {
+            width: 232px;
+            position: relative;
+            .inline-block();
+            vertical-align: top;
+        }
+
+        > .btn {
+            margin-left: 10px;
+             vertical-align: top;
+        }
+    }
+
+    &.type1 {
+        background-color: @tabs-bgColor-1;
+        border: 1px solid @tabs-BorderColor1;
+        border-bottom-width: 2px;
+
+        .tabs {
+            padding: 0 10px;
+            text-align: left;
+            margin-top: -1px;
+
+            > li {
+                .float-item( left,block );
+                margin-bottom: -2px;
+
+                > .tabs-btn {
+                    .link-custom( @default-FontColor,@link-FontColor,none );
+                    height: 46px;
+                    line-height: 40px;
+                    padding: 0 20px;
+                    background-color: transparent;
+                    font-size: @small-FontSize;
+                    border-top: 3px solid transparent;
+                }
+
+                &.active {
+
+                    > .tabs-btn {
+                        color: @heading-FontColor;
+                        background-color: @bgColor-default;
+                        border-top-color: @tabs-BorderColor2;
+                    }
+                }
+            }
+        }
+    }
+
+    &.type2 {
+        background-color: @tabs-bgColor-2;
+        border: 1px solid @tabs-BorderColor1;
+        border-bottom: none;
+
+        .tabs {
+
+            > li {
+                width: 33.33%;
+
+                > .tabs-btn {
+                    border-left: 1px solid @tabs-BorderColor1;
+                    border-bottom: 1px solid @tabs-BorderColor1;
+                    .link-custom( @default-FontColor,@link-FontColor,none );
+                    padding: 14px 20px 0 20px;
+
+                    > h5, h2 {
+                        color: @default-FontColor;
+                        line-height: @line-height-base;
+                    }
+
+                    > h5 {
+                        text-align: left;
+                    }
+
+                    > h2 {
+                        text-align: right;
+                    }
+                }
+
+                &:first-child {
+
+                    > .tabs-btn {
+                        border-left: none;
+                    }
+                }
+
+                &.active {
+
+                    > .tabs-btn {
+                        border-bottom: 1px solid transparent;
+
+                        > h2 {
+                            color: @warning-FontColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tabs-content {
+    display: block;
+}
+
+.tabs-panel {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}

@@ -1,0 +1,63 @@
+//警示
+.alert {
+    border-width: 1px;
+    border-style: solid;
+    padding: 15px 15px 15px 50px;
+    position: relative;
+    line-height: @line-height-base;
+    font-size: @smaller-FontSize;
+    .word-wrap();
+    .transition( all,0.3s,ease,0 );
+
+    > i, em {
+        .form-notice-icon-font-family();
+        font-size: @larger-FontSize;
+        position: absolute;
+        top: 13px;
+    }
+
+    > i {
+        left: 15px;
+    }
+
+    > em {
+        right: 15px;
+        cursor: pointer;
+        color: @viceText-FontColor;
+        display: none;
+
+        &:before {
+            content: "\e070";
+        }
+
+        &:hover {
+            color: @default-FontColor;
+        }
+    }
+
+    &.alert-warning {
+        border-color: @alert-BorderColor-warning;
+        background-color: @alert-bgColor-warning;
+
+        > i:before {
+            content: "\e000";
+            color: @warning-FontColor;
+        }
+
+        &:hover {
+            border-color: @alert-BorderColor-warning * 0.9;
+        }
+    }
+
+    &.with-close {
+        padding: 15px 50px;
+
+        > em {
+            .inline-block();
+
+            &:hover {
+                .animation-s( close-btn,0.4s,linear,0,1,normal,running,forwards );
+            }
+        }
+    }
+}

@@ -1,0 +1,657 @@
+//表单类
+.form-frame {
+    border: 1px solid @primary-BorderColor;
+    border-bottom: 2px solid @primary-BorderColor;
+    padding-bottom: 30px;
+
+    .form-title {
+        background-color: @form-bgColor-1;
+        font-size: @small-FontSize;
+        color: @heading-FontColor;
+        padding: 12px 15px;
+        border-bottom: 2px solid @primary-BorderColor;
+    }
+
+    .form-layer1 {
+        width: 40%;
+        min-width: 320px;
+        margin: 0 auto;
+        padding-top: 30px;
+    }
+
+    .form-layer2 {
+        margin-left: -@form-control-label-width;
+    }
+
+    .form-layer-gray-box {
+        background-color: ( @form-bgColor-1 + #111 ) * 0.955;
+        border-bottom: 1px solid @primary-BorderColor;
+        padding-bottom: 15px;
+    }
+}
+
+.form-control-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: @form-control-label-width;
+    height: @form-control-height;
+    text-align: right;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    .clearfix();
+
+    > em, span {
+        font-size: @forms-FontSize;
+        color: @default-FontColor;
+    }
+
+    > em {
+        .inline-block();
+        height: 100%;
+        line-height: @form-control-height;
+        vertical-align: middle;
+        font-style: normal;
+    }
+
+    > span {
+        .inline-block();
+        line-height: @line-height-base;
+        vertical-align: middle;
+        max-width: 76%;
+    }
+
+    > b {
+        .inline-block();
+        height: 100%;
+        vertical-align: middle;
+        color: @error-FontColor1;
+        line-height: @form-control-height + 9px;
+        font-size: ceil( ( @forms-FontSize * 1.7 ) );
+        padding-right: 5px;
+    }
+}
+
+.form-group {
+    padding-left: @form-control-label-width + 10px;
+    padding-bottom: 15px;
+    position: relative;
+    .clearfix();
+
+    &.has-correct,
+    &.has-error {
+
+        .form-control {
+            border-width: 2px;
+            padding: ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 - 2px 14px ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 - 2px 14px;
+
+            &:focus {
+                border-color: @form-focus-BorderColor;
+                color: @formValue-FontColor;
+            }
+        }
+
+        .form-control-dropdown-value,
+        .form-control-modal-value,
+        .form-control-date-value {
+            border-width: 2px;
+        }
+
+        .form-control-dropdown-btn,
+        .form-control-modal-btn,
+        .form-control-date-btn {
+            top: 2px;
+            right: 2px;
+            width: @form-control-height - 4px;
+            height: @form-control-height - 4px;
+        }
+
+        .form-control-dropdown,
+        .form-control-modal,
+        .form-control-date {
+
+            &.active {
+
+                .form-control-dropdown-value {
+                    color: @formValue-FontColor;
+                }
+            }
+
+            &:active {
+
+                .form-control-modal-value,
+                .form-control-date-value {
+                    color: @formValue-FontColor;
+                }
+            }
+        }
+    }
+
+    &.has-correct {
+
+        .form-notice {
+            color: @success-FontColor1;
+
+            > i:before {
+                content: "\e281";
+            }
+        }
+
+        .form-control {
+            border-color: @form-correct-BorderColor;
+            color: @success-FontColor1;
+        }
+
+        .form-control-dropdown-value,
+        .form-control-modal-value,
+        .form-control-date-value {
+            border-color: @form-correct-BorderColor;
+            color: @success-FontColor1;
+        }
+
+        .form-control-dropdown-btn,
+        .form-control-modal-btn,
+        .form-control-date-btn {
+            color: @viceText-FontColor / 0.1;
+            background-color: @form-correct-BorderColor;
+        }
+    }
+
+    &.has-error {
+
+        .form-notice {
+            color: @error-FontColor2;
+
+            > i:before {
+                content: "\e205";
+            }
+        }
+
+        .form-control {
+            border-color: @form-error-BorderColor;
+            color: @error-FontColor2;
+        }
+
+        .form-control-dropdown-value,
+        .form-control-modal-value,
+        .form-control-date-value {
+            border-color: @form-error-BorderColor;
+            color: @error-FontColor2;
+        }
+
+        .form-control-dropdown-btn,
+        .form-control-modal-btn,
+        .form-control-date-btn {
+            color: @viceText-FontColor / 0.1;
+            background-color: @form-error-BorderColor;
+        }
+
+        .form-control-check {
+
+            > label {
+                color: @error-FontColor2;
+            }
+        }
+    }
+
+    &.has-info {
+
+        .form-control {
+            color: @formValue-FontColor;
+        }
+
+        .form-notice {
+            color: @info-FontColor;
+
+            > i:before {
+                content: "\e605";
+            }
+        }
+    }
+}
+
+.form-notice {
+    line-height: @forms-FontSize + 4px;
+    padding: 11px 0 0 34px;
+    position: relative;
+    font-size: @forms-FontSize;
+
+    > i {
+        position: absolute;
+        top: 7px;
+        left: 0;
+        font-size: @larger-FontSize;
+        .form-notice-icon-font-family(); //报错了，但起效
+        .inline-block() ;
+    }
+}
+
+// 下拉框的input
+.form-control-focus() {
+    border-color: @form-focus-BorderColor;
+    border-width: 2px;
+    padding: ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 - 2px 14px ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 - 2px 14px;
+}
+.active .form-control[data-toggle] {
+    .form-control-focus();
+}
+
+.form-control {
+    display: block;
+    padding: ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 - 1px 15px ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 - 2px 15px;
+    width: 100%;
+    height: @form-control-height;
+    outline: none;
+    border-top: 1px solid @form-default-BorderColor;
+    border-left: 1px solid @form-default-BorderColor;
+    border-right: 1px solid @form-default-BorderColor;
+    border-bottom: 2px solid @form-default-BorderColor;
+    line-height: @forms-FontSize + 4px;
+    font-size: @forms-FontSize;
+    color: @formValue-FontColor;
+    background-color: @bgColor-default;
+    .text-hide();
+
+    &:focus,
+    &.focus {
+        .form-control-focus();
+    }
+
+    &[disabled] {
+        background-color: @bgColor-type1;
+        color: @viceText-FontColor + #222;
+        cursor: default;
+        cursor: not-allowed;
+    }
+
+    &[readonly] {
+        background-color: @bgColor-type1;
+        cursor: default;
+    }
+
+    &.smallsize {
+        padding: ( ( @form-control-height - 10px ) - ( @forms-FontSize + 4px ) ) / 2 - 1px 10px ( ( @form-control-height - 10px ) - ( @forms-FontSize + 4px ) ) / 2 - 2px 10px;
+        height: ( @form-control-height - 10px );
+
+        &:focus,
+        &.focus {
+            padding: ( ( @form-control-height - 10px ) - ( @forms-FontSize + 4px ) ) / 2 - 2px 9px ( ( @form-control-height - 10px ) - ( @forms-FontSize + 4px ) ) / 2 - 2px 9px;
+        }
+    }
+}
+
+.form-control-data {
+    line-height: @form-control-height;
+    height: @form-control-height;
+    font-size: @forms-FontSize;
+    color: @formValue-FontColor;
+    .clearfix();
+    position: relative;
+
+    .form-control-banks {
+        left: 0;
+    }
+
+    .form-control-bank-card {
+        left: 145px;
+    }
+}
+
+.form-control-tools-link {
+    position: absolute;
+    top: 0;
+    right: -( @form-control-label-width + 15px );
+    width: @form-control-label-width;
+    padding: ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 0 ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 0;
+    text-align: left;
+    line-height:  @forms-FontSize + 4px;
+    font-size: @smaller-FontSize;
+    .link-standard();
+}
+
+.form-control-wrap {
+    min-height: @form-control-height;
+}
+
+.form-control-dropdown,
+.form-control-modal,
+.form-control-date {
+    cursor: pointer;
+
+    .form-control {
+
+        &[readonly] {
+            background-color: @bgColor-default;
+            cursor: pointer;
+        }
+    }
+
+    &.smallsize { // @form-control-height 减10像素
+
+        .form-control {
+            padding: ( ( @form-control-height - 10px ) - ( @forms-FontSize + 4px ) ) / 2 - 1px ( @form-control-height - 10px - 3px ) + 10px ( ( @form-control-height - 10px ) - ( @forms-FontSize + 4px ) ) / 2 - 2px 10px;
+            height: ( @form-control-height - 10px );
+
+            &:focus,
+            &.focus {
+                padding: ( ( @form-control-height - 10px ) - ( @forms-FontSize + 4px ) ) / 2 - 2px 9px ( ( @form-control-height - 10px ) - ( @forms-FontSize + 4px ) ) / 2 - 2px 9px;
+            }
+        }
+
+        .form-control-dropdown-value,
+        .form-control-modal-value,
+        .form-control-date-value {
+            padding: 0 ( @form-control-height - 10px - 3px ) + 10px 0 10px;
+            height: ( @form-control-height - 10px );
+            line-height: @form-control-height - 10px - 3px;
+        }
+
+        .form-control-dropdown-btn,
+        .form-control-modal-btn,
+        .form-control-date-btn {
+            width: @form-control-height - 10px - 3px;
+            height: @form-control-height - 10px - 3px;
+            line-height: @form-control-height - 10px;
+            color: @viceText-FontColor * 0.7;
+            font-size: ceil( ( @forms-FontSize * 1.14 ) );
+        }
+
+        .form-control-dropdown-menu {
+            top: @form-control-height - 10px;
+            max-height: ( @form-control-height - 10px ) * 5 + 2px;
+
+            > li {
+                height: @form-control-height - 10px;
+                line-height: @form-control-height - 10px;
+                padding: 0 10px;
+            }
+        }
+    }
+
+    &:hover {
+
+        .form-control-dropdown-btn > i {
+            .animated();
+            .slideInDown();
+        }
+
+        .form-control-modal-btn > i,
+        .form-control-date-btn > i {
+            .animated();
+            .jello();
+        }
+    }
+
+    &.active {
+
+        .form-control {
+            border-color: @form-focus-BorderColor;
+            border-width: 2px;
+            padding: ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 - 2px 14px ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 - 2px 14px;
+        }
+
+        .form-control-dropdown-value,
+        .form-control-date-value {
+            border-color: @form-focus-BorderColor;
+            border-width: 2px;
+            color: @formValue-FontColor;
+        }
+
+        .form-control-dropdown-menu {
+            display: block;
+        }
+
+        .form-control-dropdown-btn,
+        .form-control-date-btn {
+            color: #fff;
+            background-color: @form-focus-BorderColor;
+        }
+    }
+
+    &:active {
+
+        .form-control-modal-value {
+            border-color: @form-focus-BorderColor;
+            border-width: 2px;
+        }
+
+        .form-control-modal-btn {
+            color: #fff;
+            background-color: @form-focus-BorderColor;
+        }
+    }
+
+    &.with-keyin {
+
+        &.active {
+
+            .form-control {
+                border-color: @form-focus-BorderColor;
+                border-width: 2px;
+                padding: ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 - 2px 14px ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 - 2px 14px;
+            }
+        }
+    }
+}
+
+.form-control-wrap,
+.form-control-dropdown,
+.form-control-modal,
+.form-control-date {
+    position: relative;
+
+    > label {
+        line-height: @form-control-height;
+        position: absolute;
+        top: 0;
+        left: 16px;
+        color: @viceText-FontColor;
+        font-size: @smaller-FontSize;
+    }
+
+    &.smallsize {
+
+        > label {
+            line-height: @form-control-height - 12px;
+            left: 10px;
+        }
+
+        &.with-keyin {
+
+            &.active {
+
+                .form-control {
+                    border-color: @form-focus-BorderColor;
+                    border-width: 2px;
+                    padding: ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 - 2px ( @form-control-height - 10px - 3px ) + 9px ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 - 2px 9px;
+                }
+            }
+        }
+    }
+}
+
+.form-control-dropdown-value,
+.form-control-modal-value,
+.form-control-date-value {
+    padding: 0 ( @form-control-height - 3px ) + 15px 0 15px;
+    height: @form-control-height;
+    border-top: 1px solid @form-default-BorderColor;
+    border-left: 1px solid @form-default-BorderColor;
+    border-right: 1px solid @form-default-BorderColor;
+    border-bottom: 2px solid @form-default-BorderColor;
+    line-height: @form-control-height - 3px;
+    font-size: @forms-FontSize;
+    color: @formValue-FontColor;
+    background-color: @bgColor-default;
+    .text-hide();
+    position: relative;
+}
+
+.form-control-dropdown-menu {
+    .reset-list( none,block,@forms-FontSize,@forms-FontSize + 4px );
+    display: none;
+    position: absolute;
+    top: @form-control-height;
+    left: 0;
+    width: 100%;
+    border: 2px solid @form-focus-BorderColor;
+    border-top: none;
+    overflow: auto;
+    max-height: @form-control-height * 5 + 2px;
+    background-color: @bgColor-default;
+    z-index: 2;
+
+    > li {
+        height: @form-control-height;
+        line-height: @form-control-height;
+        background-color: @bgColor-default;
+        .text-hide();
+        padding: 0 15px;
+        position: relative;
+
+        &:hover,&.hover {
+            background-color: @bgColor-type1;
+        }
+    }
+}
+
+.form-control-dropdown-btn,
+.form-control-modal-btn,
+.form-control-date-btn {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: @form-control-height - 3px;
+    height: @form-control-height - 3px;
+    line-height: @form-control-height;
+    text-align: center;
+    color: @viceText-FontColor * 0.7;
+    font-size: ceil( ( @forms-FontSize * 1.14 ) );
+    background-color: @form-default-BorderColor / 0.97;
+    overflow: hidden;
+    z-index: 1;
+
+    > i {
+        .inline-block();
+        .form-notice-icon-font-family(); //报错了，但起效
+    }
+}
+
+    .form-control-dropdown-btn > i:before {
+        content: "\e600";
+    }
+
+    .form-control-modal-btn > i:before {
+        content: "\e607";
+    }
+
+    .form-control-date-btn > i:before {
+        content: "\e608";
+    }
+
+.form-control-check {
+    .clearfix();
+
+    > label {
+        line-height: @forms-FontSize + 4px;
+        .float-item( left,block );
+        cursor: pointer;
+        position: relative;
+        color: @formValue-FontColor;
+        padding: ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 25px ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 20px;
+
+        &.agreement-check {
+            padding: ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 - 5px 0 ( @form-control-height - ( @forms-FontSize + 4px ) ) / 2 - 5px 20px;
+        }
+
+        > input[type="checkbox"], input[type="radio"] {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            margin-top: -6px;
+        }
+    }
+}
+
+.form-control-verify {
+    position: relative;
+    padding-right: @form-control-verify-btn-width;
+}
+
+.form-control-verify-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    .rounded( 0 );
+    width: @form-control-verify-btn-width;
+    height: @form-control-height;
+    background-color: @secondary-BtnColor;
+    border-bottom-color: @secondary-BtnColor * 0.8;
+    text-align: center;
+    line-height: @form-control-height;
+    font-size: @forms-FontSize;
+
+    &:hover,
+    &:active,
+    &.current {
+        background-color: @secondary-BtnColor * 0.95;
+        border-bottom-color: @secondary-BtnColor * 0.7;
+    }
+
+    &.disabled {
+        background-color: @disabled-BtnColor;
+        border-bottom-color: @disabled-BtnColor * 0.9;
+        cursor: default;
+        cursor: not-allowed;
+        color: @viceText-FontColor + #222;
+    }
+}
+
+.form-control-withdrawFull {
+    position: relative;
+}
+
+.form-control-withdrawFull-btn {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    .rounded( 0 );
+    width: @form-control-withdrawFull-btn-width;
+    height: @form-control-height - 4px;
+    background-color: #ebf4ff;
+    border-bottom: none;
+    text-align: center;
+    line-height: @form-control-height - 4px;
+    font-size: @forms-FontSize;
+    .link-standard();
+
+    &:hover,
+    &:active,
+    &.current {
+        background-color: #ebf4ff * 0.95;
+    }
+}
+
+.form-control-banks {
+    height: 38px;
+    width: 160px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    margin-top: -19px;
+    background: url("@{images-url}bank.png") no-repeat;
+}
+
+.form-control-bank-card {
+    line-height: 38px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 160px;
+    margin-top: -19px;
+    color: @formValue-FontColor;
+    font-size: @small-FontSize;
+}
+

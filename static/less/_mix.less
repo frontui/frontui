@@ -1,0 +1,451 @@
+/*
+--- mix ---
+*/
+
+@charset "UTF-8";
+
+// transition 
+.transition ( @property, @duration, @timing-function, @delay ) {
+    /*-webkit-transition-property: @property;
+       -moz-transition-property: @property;
+         -o-transition-property: @property;*/
+            transition-property: @property;
+    /*-webkit-transition-duration: @duration;
+       -moz-transition-duration: @duration;
+         -o-transition-duration: @duration;*/
+            transition-duration: @duration;
+    /*-webkit-transition-timing-function: @timing-function;
+       -moz-transition-timing-function: @timing-function;
+         -o-transition-timing-function: @timing-function;*/
+            transition-timing-function: @timing-function;
+    /*-webkit-transition-delay: @delay;
+       -moz-transition-delay: @delay;
+         -o-transition-delay: @delay;*/
+            transition-delay: @delay;
+}
+
+// Rounded 
+.rounded ( @radius ) {
+    /*-webkit-border-radius: @radius;
+       -moz-border-radius: @radius;*/
+            border-radius: @radius;
+}
+
+// Borner radius
+.border-radius ( @topLeft, @topRight, @bottomRight, @bottomLeft ) {
+    // Top Left
+    /*-webkit-border-top-left-radius: @topLeft;
+        -moz-border-radius-topleft: @topLeft;*/
+            border-top-left-radius: @topLeft;
+    // Top Right
+    /*-webkit-border-top-right-radius: @topRight;
+        -moz-border-radius-topright: @topRight;*/
+            border-top-right-radius: @topRight;
+    // Bottom Right
+    /*-webkit-border-bottom-right-radius: @bottomRight;
+        -moz-border-radius-bottomright: @bottomRight;*/
+            border-bottom-right-radius: @bottomRight;
+    // Bottom Left
+    /*-webkit-border-bottom-left-radius: @bottomLeft;
+        -moz-border-radius-bottomleft: @bottomLeft;*/
+            border-bottom-left-radius: @bottomLeft;
+}
+
+// Basic box shadow
+.box-shadow( @shadow ) {
+    /*-webkit-box-shadow: @shadow;
+       -moz-box-shadow: @shadow;*/
+            box-shadow: @shadow;
+}
+
+// Outer shadow
+.outer-shadow( @x: 0, @y: 1px, @blur: 2px, @alpha: 0.1 ) {
+    /*-webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+       -moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);*/
+            box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+
+// Inner shadow
+.inner-shadow( @x: 0, @y: 1px, @blur: 2px, @alpha: 0.4 ) {
+    /*-webkit-box-shadow: inset @x @y @blur rgba(0, 0, 0, @alpha);
+       -moz-box-shadow: inset @x @y @blur rgba(0, 0, 0, @alpha);*/
+            box-shadow: inset @x @y @blur rgba(0, 0, 0, @alpha);
+}
+
+// Basic transform
+.transform( @transform ) {
+    /*-webkit-transform: @transform;
+       -moz-transform: @transform;
+        -ms-transform: @transform;
+         -o-transform: @transform;*/
+            transform: @transform;
+}
+
+// Rotate
+.rotate( @deg ) {
+  .transform( rotate(@deg) );
+}
+
+// Scale
+.scale( @ratio ) {
+  .transform( scale(@ratio) );
+}
+
+// Translate
+.translate( @x, @y ) {
+  .transform( translate(@x, @y) );
+}
+
+// Background clip
+.background-clip( @argument: padding-box ) {
+  /*-webkit-background-clip: @argument;
+     -moz-background-clip: @argument;*/
+          background-clip: @argument;
+}
+
+// Box sizing
+.border-box( @sizing: border-box ) {
+  /*-webkit-box-sizing: @sizing;
+     -moz-box-sizing: @sizing;
+      -ms-box-sizing: @sizing;*/
+          box-sizing: @sizing;
+}
+
+// User select
+.user-select( @select: none ) {
+  /*-webkit-user-select: @select;
+     -moz-user-select: @select;
+      -ms-user-select: @select;
+       -o-user-select: @select;*/
+          user-select: @select;
+}
+
+// Opacity
+.opacity( @opacity: 0.5 ) {
+  opacity: @opacity;
+  @opperc: @opacity * 100;
+  filter: ~"alpha(opacity=@{opperc})";
+}
+
+.opacity-custom( @opacity-c ) {
+  opacity: @opacity-c;
+  @opperc: @opacity-c * 100;
+  filter: ~"alpha(opacity=@{opperc})";
+}
+
+// Display: inline-block
+.inline-block() {
+  display: inline-block;
+  *zoom: 1; /* Fix for IE7 */
+  *display: inline; /* Fix for IE7 */
+}
+
+// 块化水平居中
+.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//     Develop and Testing Tools
+// ---------------------------------
+
+// Hide block
+.hide() {
+  display: none;
+}
+
+// Hide conntent
+.hide-text() {
+  font: 0/0 a;
+  border: 0;
+  color: transparent;
+  background-color: transparent;
+  text-shadow: none;
+  .box-shadow( none );
+}
+
+// 清除浮动
+.clearfix() {
+    *zoom: 1;
+
+    &:before,
+    &:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+// 截断文本
+.text-hide() {
+  overflow: hidden;
+  /*-webkit--o-text-overflow: ellipsis;
+  -moz-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;*/
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//强制换行
+.word-wrap() {
+    /*-ms-word-break: break-all;*/
+    word-break: break-all;
+    white-space: normal;
+}
+
+// 浮动
+.float-item( @position,@display ) {
+    float: @position;
+    display: @display;
+}
+
+// 标准超链接
+.link-standard() {
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    cursor: pointer;
+    color: @link-FontColor;
+
+    &:hover,
+    &:active {
+        color: @linkHover-FontColor;
+        text-decoration: none;
+    }
+
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+// 定制超链接
+.link-custom ( @color,@HoverColor,@text-decoration ) {
+    text-decoration: @text-decoration;
+    list-style: none;
+    outline: none;
+    cursor: pointer;
+    color: @color;
+
+    &:hover,
+    &:active {
+        color: @HoverColor;
+        text-decoration: @text-decoration;
+    }
+
+    &:focus {
+        text-decoration: @text-decoration;
+    }
+}
+
+// 字体发光
+.text-get-light ( @blur,@opacity ) {
+    text-shadow: 0 0 @blur rgba( 255,255,255,@opacity );
+}
+
+// 字体白阴影
+.text-white-shadow ( @blur,@opacity ) {
+    text-shadow: 1px 1px @blur rgba( 255,255,255,@opacity );
+}
+
+// 高亮字体
+.highlight-text ( @color ) {
+    color: @color;
+
+    &:hover {
+        color: @color + #111;
+    }
+}
+
+//样式上下箭头
+.arrow-up-or-down( @border-top-or-bottom,@ysize,@xsize,@arrowcolor ) {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    @{border-top-or-bottom}: @ysize solid @arrowcolor;
+    border-right: @xsize solid transparent;
+    border-left: @xsize solid transparent;
+}
+
+// 样式左右箭头
+.arrow-left-or-right( @border-left-or-right,@xsize,@ysize,@arrowcolor ) {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    @{border-left-or-right}: @xsize solid @arrowcolor;
+    border-top: @ysize solid transparent;
+    border-bottom: @ysize solid transparent;
+}
+
+// 尺寸
+.size(@width,@height) {
+  width: @width;
+  height: @height;
+}
+.square(@size) {
+  .size(@size,@size);
+}
+
+// 方盒+字符
+.squareFontBox( @fontColor,@fontSize,@bgColor,@size,@radius,@position,@display ) {
+    text-align: center;
+    color: @fontColor;
+    font-size: @fontSize;
+    .square( @size );
+    line-height: @size;
+    background-color: @bgColor;
+    .rounded( @radius );
+    .float-item( @position,@display );
+}
+
+// 可调整大小的文本域
+.resizable(@direction: both) {
+  // 可选: horizontal, vertical, both
+  resize: @direction;
+  // Safari 适配
+  overflow: auto;
+}
+
+// 图片广告
+.adv-link-box( @position,@display,@fontSize,@radius,@borderWidth,@borderColor ) {
+    outline: none;
+    cursor: pointer;
+    .float-item( @position,@display );
+
+    > img {
+        .border-box();
+        display: block;
+        text-align: center;
+        color: #999;
+        font-size: @fontSize;
+        background-color: #cbcbcb;
+        width: 100%;
+        line-height: normal;
+        .rounded( @radius );
+        border: @borderWidth solid @borderColor;
+
+        &:hover {
+            .opacity-custom( 0.8 );
+        }
+    }
+}
+
+// 重置列表样式
+.reset-list ( @position,@display,@fontSize,@lineHeight ) {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: @fontSize;
+    line-height: @lineHeight;
+
+    > li {
+        .float-item( @position,@display );
+    }
+}
+
+// 简化动画
+.animation-s( @name,@duration,@timing-function,@delay,@iteration-count,@direction,@play-state,@fill-mode ) {
+    animation-name: @name;
+    animation-duration: @duration;
+    animation-timing-function: @timing-function;
+    animation-delay: @delay;
+    animation-iteration-count: @iteration-count;
+    animation-direction: @direction;
+    animation-play-state: @play-state;
+    animation-fill-mode: @fill-mode;
+    // Firefox
+    /*-moz-animation-name: @name;
+    -moz-animation-duration: @duration;
+    -moz-animation-timing-function: @timing-function;
+    -moz-animation-delay: @delay;
+    -moz-animation-iteration-count: @iteration-count;
+    -moz-animation-direction: @direction;
+    -moz-animation-play-state: @play-state;
+    -moz-animation-fill-mode: @fill-mode;*/
+    // Safari 和 Chrome
+    /*-webkit-animation-name: @name;
+    -webkit-animation-duration: @duration;
+    -webkit-animation-timing-function: @timing-function;
+    -webkit-animation-delay: @delay;
+    -webkit-animation-iteration-count: @iteration-count;
+    -webkit-animation-direction: @direction;
+    -webkit-animation-play-state: @play-state;
+    -webkit-animation-fill-mode: @fill-mode;*/
+    // Opera
+    /*-o-animation-name: @name;
+    -o-animation-duration: @duration;
+    -o-animation-timing-function: @timing-function;
+    -o-animation-delay: @delay;
+    -o-animation-iteration-count: @iteration-count;
+    -o-animation-direction: @direction;
+    -o-animation-play-state: @play-state;
+    -o-animation-fill-mode: @fill-mode;*/
+}
+
+// 动画定义简化
+.keyframes(@name) {
+    @-webkit-keyframes @name {
+        .-frames(-webkit-);
+    }
+    @keyframes @name {
+        .-frames();
+    }
+}
+
+// 单独属性定义
+.animation-delay( @delay ) {
+    animation-delay: @delay;
+    /*-moz-animation-delay: @delay;
+    -webkit-animation-delay: @delay;
+    -o-animation-delay: @delay;*/
+}
+
+.animation-duration( @duration ) {
+    animation-duration: @duration;
+    /*-moz-animation-duration: @duration;
+    -webkit-animation-duration: @duration;
+    -o-animation-duration: @duration;*/
+}
+
+& {
+    .keyframes( effectOne );
+    
+    .-frames(@-...) {
+        0% { 
+            @{-}opacity: 0.3;
+            @{-}transform: scale(0.5);
+            background-color: rgba( 240,96,96,0.1 );
+        }
+        40% { 
+            @{-}opacity: 0.5;
+            @{-}box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px #f06060, 0 0 0 10px rgba(255,255,255,0.5);
+        }
+        100% {
+            @{-}box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px #f06060, 0 0 0 10px rgba(255,255,255,0.5);
+		    @{-}transform: scale(1.5);
+            @{-}opacity: 0;
+        }
+    }
+}
+
+& {
+    .keyframes( close-btn );
+    
+    .-frames(@-...) {
+        0% { 
+            @{-}transform: rotate( 0 );
+        }
+
+        100% {
+            @{-}transform: rotate( 90deg );
+        }
+    }
+}
+

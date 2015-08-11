@@ -1,0 +1,44 @@
+//tooltips-icon
+.tooltips(@bg, @bdc, @color: @default-FontColor){
+    background-color: @bg;
+    border: 1px solid @bdc;
+    height: 32px;
+    line-height: 30px;
+    padding: 0 10px;
+    position: absolute;
+    top: -46px;
+    left: -20px;
+    color: @color;
+    white-space: nowrap;
+    display: none;
+
+    .tips-arrow {
+        .arrow-up-or-down( border-top,8px,8px,@bg );
+        position: absolute;
+        bottom: -8px;
+        left: 18px;
+        margin: 0;
+    }
+
+    .tips-arrow-border {
+        .arrow-up-or-down( border-top,9px,9px,@bdc );
+        position: absolute;
+        bottom: -9px;
+        left: 17px;
+        margin: 0;
+    }
+}
+
+.tooltips {
+    .tooltips(@tooltips-bgColor1, @tooltips-BorderColor1);
+    
+    .tips-arrow {
+        left: 50%;
+        margin-left: -8px;
+    }
+
+    .tips-arrow-border{
+        left: 50%;
+        margin-left: -9px;
+    }
+}
