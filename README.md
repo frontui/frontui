@@ -35,7 +35,13 @@
 
 ## 安装依赖组件
 
-	gulp install
+先安装`npm`依赖包
+	
+	npm install
+
+安装`bower`组件
+
+	bower install
 
 执行安装`npm_modules`, `bower_components`
 
