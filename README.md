@@ -20,6 +20,8 @@
 	bower install myproject=frontui
 
 
+**myproject** 为项目名称
+
 ## 目录简介
 
 * `template` 模板目录
