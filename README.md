@@ -146,6 +146,9 @@
 
 ## SVN发布
 
+
+### 涉及任务
+
 	'svnServer', ['svnTemplate', 'svnCopy', 'svnCss', 'svnJs', 'svnImage', 'svnBowerJs']
 
 
@@ -157,3 +160,17 @@
 * `svnBowerJs` 拷贝bower到`static/js`下
 * `svnServer` 预览发布内容
 
+
+### svn.json 配置
+
+每个成员只需修改各自的svn.json配置
+
+	{
+		"port": "8251",
+		"path": "../../svn/eWeb",
+		"staticPath": "../../svn/eWeb/static"
+	}
+
+* `port` svn中预览地址
+* `path` svn目录地址
+* `staticPath` svn中静态文件地址
