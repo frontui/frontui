@@ -48,6 +48,7 @@ var banner = [
 function errrHandler( e ){
     // 控制台发声,错误时beep一下
     $.util.beep()
+    $.util.log($.util.colors.red('↓看这里看这里，报错了：'))
     $.util.log( e )
 }
 
@@ -80,6 +81,7 @@ gulp.task('less', function(){
                 .pipe($.changed(config.staticPath+'/css'))
                 .pipe($.newer(config.staticPath+'/css'))
                 .pipe($.less())
+                .pipe($.autoprefixer())
                 .pipe(gulp.dest(config.staticPath+'/css'))
                 .pipe(connect.reload())
 })
@@ -174,8 +176,9 @@ gulp.task('default', function(){
 // 模板
 gulp.task('svnTemplate', function(){
     return gulp.src(['./'+ config.destPath + '/**/**.html'])
-            .pipe($.changed(svn.path))
-            .pipe($.replace(/"(\/)bower_components\/(.*)\/([a-zA-Z0-9.]+\.js)(.*)"/g, config.static+'/js/$3$4'))
+            //.pipe($.changed(svn.path))
+            .pipe($.replace(/\/static/g, './static'))
+            .pipe($.replace(/"(\/)bower_components\/(.*)\/([a-zA-Z0-9.]+\.js)(.*)"/g, '"'+ config.staticPath +'/js/$3$4"'))
             .pipe(gulp.dest(svn.path))
 });
 
