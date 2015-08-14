@@ -47,6 +47,14 @@
 
 执行安装`npm_modules`, `bower_components`
 
+###如果修改了外部`.bowerrc`文件则需要`myporject`目录下再建一个`.bowerrc`文件（bower过滤掉了github中的.bowerrc）
+
+`.bowerrc`
+
+	{
+		"directory": "bower_components"
+	}
+
 
 ## 模板
 
