@@ -1,0 +1,13 @@
+{% macro current(cur='') %}
+
+<ul class="nav">
+    <li>{{ cur }}</li>
+    <li><a href="#"  {% if cur == '' or cur == 'index' %}class="current"{% endif %}>首页</a></li>
+    <li><a href="#" {% if cur == 'detail' %}class="current"{% endif %}>账户总览</a></li>
+    <li><a href="#" {% if cur == 'setting' %}class="current"{% endif %}>账户设置</a></li>
+    <li><a href="#" {% if cur == 'aaaa' %}class="current"{% endif %}>aaa</a></li>
+    <li><a href="#" {% if cur == 'aaaa' %}class="current"{% endif %}>aaa</a></li>
+    <li><a href="#" {% if cur == 'aaaa' %}class="current"{% endif %}>aaa</a></li>
+</ul>
+
+{% endmacro %}

@@ -20,6 +20,9 @@
 {# body内容 #}
 {% block body %}
 	body内容写在这里aaabbbccc
+
+	{% import "_components/navigator.html" as navigator %}
+	{{ navigator.current('detail') }}
 	
 	<!-- 弹出层 -->
 	{# modal({

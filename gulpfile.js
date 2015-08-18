@@ -67,8 +67,8 @@ function getFolders(dir) {
 gulp.task('template', function(){
 	return gulp.src([config.template + '/**/**.html', '!'+ config.template + '/**/_**.html', '!'+ config.template +'/_**/*.html'])
                 .pipe($.plumber( { errorHandler: errrHandler } ))
-                .pipe($.changed(config.destPath))
-                .pipe($.newer(config.destPath))
+                //.pipe($.changed(config.destPath))
+                //.pipe($.newer(config.destPath))
 				.pipe(tpl())
 				.pipe(gulp.dest(config.destPath))
                 .pipe(connect.reload())
