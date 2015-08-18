@@ -633,15 +633,11 @@
     }
 }
 
-.form-control-banks {
-    height: 38px;
-    width: 160px;
-    display: block;
-    position: absolute;
+.bank-bg {
     top: 50%;
     left: 15px;
     margin-top: -19px;
-    background: url("@{images-url}bank.png") no-repeat;
+   
 }
 
 .form-control-bank-card {
@@ -655,3 +651,32 @@
     font-size: @small-FontSize;
 }
 
+//表单中插入表格
+.form-table-wrap {
+    background-color: @bgColor-default;
+    width: 536px;
+    margin: 0 auto 15px auto;
+}
+
+.form-table {
+    width: 100%;
+    max-width: 100%;
+    font-size: @smallest-FontSize;
+    table-layout: fixed;
+    text-align: center;
+
+    th, td {
+        padding: 6px 10px 4px 10px;
+        vertical-align: middle;
+    }
+
+    th {
+        background-color: @table-bgColor-1;
+        border-bottom: 1px solid @table-BorderColor1;
+        font-weight: bold;
+    }
+
+    td {
+        border-bottom: 1px solid @table-BorderColor1;
+    }
+}

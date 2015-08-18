@@ -1,514 +1,79 @@
-
-@import "_normalize";       //项目引用样式初始化
-@import "_config";          //项目样式设定项
-@import "_mix";             //项目样式工具
-@import "_font";            //项目字体
-@import "_fonticon";        //项目字体图标
-@import "_sprite";          //项目雪碧图
-@import "_animate.less";    //项目引用CSS3动画库
-@import "_animation.less";    //交互CSS3动画
-@import "components/_datetimepicker.less";    // 日期选择器
-@import "components/_notify";   // 通知
-@import "components/_mainnav.less";     //主导航模块
-@import "components/_table.less";     //表格模块
-@import "components/_btns.less";     //按钮模块
-@import "components/_banklogo.less";     //银行logo模块
-@import "components/_form.less";     //表单模块
-@import "components/_tooltips.less";     //tooltips模块
-@import "components/_chart.less";     //图表模块
-@import "components/_tabs.less";     //标签模块
-@import "components/_page.less";     //翻页模块
-@import "components/_notice.less";     //业务流程提示模块
-@import "components/_data.less";     //数据统计部件模块
-@import "components/_alert.less";     //警示模块
-@import "components/_steps.less";     //步骤模块
-@import "components/_bankcardlist.less";     //银行卡列表模块
-@import "components/_pop.less";     //静态窗口模块
-@import "components/_ebank.less";     //网上银行模块
-
-
-
 /*
---- share ---
+--- 项目配置样式 ---
 */
 
-@charset "UTF-8";
+@import "_normalize";                         //项目引用样式初始化
+@import "_config";                            //项目样式设定项
+@import "_mix";                               //项目样式工具
+@import "_font";                              //项目字体
+@import "_fonticon";                          //项目字体图标
+@import "_sprite";                            //项目雪碧图
+@import "_animate";                           //项目引用CSS3动画库
+@import "_animation";                         //交互CSS3动画
+@import "components/_gobal";                  //自定义全局样式
 
-html {
-    font-size: 62.5%;
-}
+/*
+--- 项目模块样式 ---
+*/
 
-html,
-body {
-    .font-hei();
-    //height: 100%;
-    //width: 100%;
-}
-
-body {
-    font-size: @smaller-FontSize;
-    color: @default-FontColor;
-    background-color: @bgColor-default;
-    line-height: @line-height-base;
-
-    * {
-        .border-box();
-    }
-}
-
-h1,h2,h3,h4,h5,h6,p {
-    font-weight: 500;
-    margin: 0;
-}
-
-h1,h2,h3,h4,h5,h6 {
-    color: @heading-FontColor;
-}
-
-h1,.h1 {
-    font-size: @h1-FontSize !important;
-}
-
-h2,.h2 {
-    font-size: @h2-FontSize !important;
-}
-
-h3,.h3 {
-    font-size: @h3-FontSize !important;
-}
-
-h4,.h4 {
-    font-size: @h4-FontSize !important;
-}
-
-h5,.h5 {
-    font-size: @h5-FontSize !important;
-}
-
-h6,.h6 {
-    font-size: @h6-FontSize !important;
-}
-
-.heading-FontColor {
-    color: @heading-FontColor !important;
-}
-
-.default-FontColor {
-    color: @default-FontColor !important;
-}
-
-.viceText-FontColor {
-    color: @viceText-FontColor !important;
-}
-
-.warning-FontColor {
-    color: @warning-FontColor !important;
-}
-
-.success-FontColor1 {
-    color: @success-FontColor1 !important;
-}
-
-.success-FontColor2 {
-    color: @success-FontColor2 !important;
-}
-
-.error-FontColor1 {
-    color: @error-FontColor1 !important;
-}
-
-.error-FontColor2 {
-    color: @error-FontColor2 !important;
-}
-
-.info-FontColor {
-    color: @info-FontColor !important;
-}
-
-.link-FontColor {
-    color: @link-FontColor !important;
-}
-
-.linkHover-FontColor {
-    color: @link-FontColor !important;
-}
-
-//排版工具类，尽量能在元素样式里面申明就不要用到这种附加类，否则会增加兼容性样式编写的难度，此类工具多用在对版面布局没影响的元素中
-.text-align-right {
-    text-align: right !important;
-
-    &.plural-btns > .btn {
-        margin-left: 10px;
-        margin-right: 0;
-    }
-}
-
-.text-align-left {
-    text-align: left !important;
-
-    &.plural-btns > .btn {
-        margin-right: 10px;
-        margin-left: 0;
-    }
-}
-
-.text-align-center {
-    text-align: center !important;
-
-    &.plural-btns > .btn {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-}
-
-.text-align-justify {
-    text-align: justify !important;
-}
-
-.float-left {
-    float: left !important;
-}
-
-.float-right {
-    float: right !important;
-}
-
-.text-nowrap {
-    .text-hide();
-}
-
-.word-wrap {
-    .word-wrap();
-}
-
-.inline-block {
-    .inline-block();
-}
-
-.margin-top-20px {
-    margin-top: 20px !important;
-}
-
-.margin-top-40px {
-    margin-top: 40px !important;
-}
-
-
-//辅助类工具
-.caret-down {
-    .arrow-up-or-down( border-top,4px,4px,@default-FontColor );
-}
-
-.caret-up {
-    .arrow-up-or-down( border-bottom,4px,4px,@default-FontColor );
-}
-
-.caret-left {
-    .arrow-left-or-right( border-right,4px,4px,@default-FontColor );
-}
-
-.caret-right {
-    .arrow-left-or-right( border-left,4px,4px,@default-FontColor );
-}
-
-.link-standard {
-    .link-standard();
-}
+@import "components/_datetimepicker";    //日期选择器
+@import "components/_notify";            //通知
+@import "components/_typeset";           //排版工具
+@import "components/_mainnav";           //主导航
+@import "components/_table";             //表格
+@import "components/_btns";              //按钮
+@import "components/_banklogo";          //银行logo
+@import "components/_form";              //表单
+@import "components/_chart";             //图表
+@import "components/_tabs";              //标签
+@import "components/_pagination";        //翻页
+@import "components/_notice";            //业务流程提示
+@import "components/_data";              //数据统计部件
+@import "components/_alert";             //警示
+@import "components/_steps";             //步骤
+@import "components/_bankcardlist";      //银行卡列表
+@import "components/_pop";               //静态窗口
+@import "components/_ebank";             //网上银行
+@import "components/_password";          //密码状态显示
+@import "components/_fliter";            //过滤器行内结构
+@import "components/_tooltips";          //tooltips
+@import "components/_breadcrumb";        //面包屑导航
 
 
 
 
 
 
-//密码状态标示
-.password-status-wrap {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
     
-}
-
-.password-status-table {
-    width: 100%;
-    max-width: 100%;
-    font-size: @smaller-FontSize;
-    table-layout: fixed;
-
-    .password-status-label {
-        display: block;
-        position: relative;
-        padding-left: 28px;
-
-        > b {
-            position: absolute;
-            top: 2px;
-            left: 0;
-            display: block;
-        }
-
-        &.done {
-
-            > b {
-                .icon-password-radio1();
-            }
-        }
-
-        &.notdone {
-            color: @warning-FontColor;
-
-            > b {
-                .icon-password-radio2();
-            }
-        }
-    }
-
-    td {
-        padding: 10px 10px;
-    }
-}
-
-
-//表单中插入表格
-.form-table-wrap {
-    background-color: @bgColor-default;
-    width: 536px;
-    margin: 0 auto 15px auto;
-}
-
-.form-table {
-    width: 100%;
-    max-width: 100%;
-    font-size: @smallest-FontSize;
-    table-layout: fixed;
-    text-align: center;
-
-    th, td {
-        padding: 6px 10px 4px 10px;
-        vertical-align: middle;
-    }
-
-    th {
-        background-color: @table-bgColor-1;
-        border-bottom: 1px solid @table-BorderColor1;
-        font-weight: bold;
-    }
-
-    td {
-        border-bottom: 1px solid @table-BorderColor1;
-    }
-}
-
-
-
-//过滤器行内结构
-.fliter-inline-wrap {
-    border: 1px solid @primary-BorderColor;
-    background-color: @bgColor-type1;
-    .clearfix();
-    padding: 12px 0 12px 76px;
-    position: relative;
-
-    > .lt {
-        line-height: @form-control-height - 10px;
-        font-size: @smaller-FontSize;
-        position: absolute;
-        top: 12px;
-        left: 15px;
-    }
-
-    .fliter-inline-width1 {
-        width: 140px;
-        float: left;
-        margin-left: 10px;
-        position: relative;
-    }
-
-    .fliter-inline-bar {
-        height: @form-control-height - 10px;
-        width: 10px;
-        text-align: center;
-        line-height: @form-control-height - 10px;
-        .float-item( left,block );
-        margin-left: 10px;
-    }
-
-    > .btn {
-        margin-left: 10px;
-    }
-}
-
-// Measure scrollbar width for padding body during modal show/hide
-.modal-scrollbar-measure {
-    position: absolute;
-    top: -9999px;
-    width: 50px;
-    height: 50px;
-    overflow: scroll;
-}
-
-
-
-
-
-    // 方位
-    // ================
-
-    // 右对齐
-    &-top-left{
-        .tips-arrow{
-            left: 17px;
-        }
-        .tips-arrow-border{
-            left: 17px;
-        }
-    }
-
-    // 右对齐
-    &-top-right{
-        .tips-arrow{
-            left: auto;
-            right: 18px;
-        }
-        .tips-arrow-border{
-            left: auto;
-            right: 17px;
-        }
-    }
-
-    // 底部
-    &-bottom{
-        .tips-arrow{
-            top: -8px;
-            bottom: auto;
-            border-top: none;
-            .arrow-up-or-down( border-bottom,8px,8px,@tooltips-bgColor1 );
-        }
-        .tips-arrow-border{
-            top: -9px;
-            bottom: 0;
-            border-top: none;
-            .arrow-up-or-down( border-bottom,9px,9px,@tooltips-BorderColor1 );
-        }
-    }
-
-    // 底部左对齐
-    &-bottom-left{
-        .tips-arrow{
-            top: -8px;
-            bottom: auto;
-            border-top: none;
-            left: 18px;
-            .arrow-up-or-down( border-bottom,8px,8px,@tooltips-bgColor1 );
-        }
-        .tips-arrow-border{
-            top: -9px;
-            bottom: 0;
-            left: 18px;
-            border-top: none;
-            .arrow-up-or-down( border-bottom,9px,9px,@tooltips-BorderColor1 );
-        }
-    }
-
-    // 底部右对齐
-    &-bottom-right{
-        .tips-arrow{
-            top: -8px;
-            left: auto;
-            bottom: auto;
-            right: 18px;
-            border-top: none;
-            .arrow-up-or-down( border-bottom,8px,8px,@tooltips-bgColor1 );
-        }
-        .tips-arrow-border{
-            top: -9px;
-            bottom: 0;
-            left: auto;
-            right: 17px;
-            border-top: none;
-            .arrow-up-or-down( border-bottom,9px,9px,@tooltips-BorderColor1 );
-        }
-    }
-
-    // 在左边
-    &-left{
-
-        .tips-arrow{
-            top: 50%;
-            left: auto;
-            right: -8px;
-            bottom: auto;
-            margin: -8px 0 0 0;
-            border-right: none;
-            .arrow-left-or-right(border-left, 8px, 8px, @tooltips-bgColor1);
-        }
-
-        .tips-arrow-border{
-            top: 50%;
-            left: auto;
-            right: -9px;
-            bottom: auto;
-            margin: -9px 0 0 0;
-            border-right: none;
-            .arrow-left-or-right(border-left, 9px, 9px, @tooltips-BorderColor1);
-        }
-    }
-
-    // 在右边
-    &-right{
-
-        .tips-arrow{
-            top: 50%;
-            left: -8px;
-            margin-top: -8px;
-            .arrow-left-or-right(border-right, 8px, 8px, @tooltips-bgColor1);
-        }
-
-        .tips-arrow-border{
-            top: 50%;
-            left: -9px;
-            margin-top: -9px;
-            .arrow-left-or-right(border-right, 9px, 9px, @tooltips-BorderColor1);
-        }
-    }
-
-
-    // 主题
-    // ================
-
-    // 黑色
-    &-black{
-        .tooltips(rgba(0,0,0,.5), rgba(0,0,0,.5), #ffffff);
-
-        border: none;
-        border-radius: 5px;
-
-        .tips-arrow {
-            left: 50%;
-            margin-left: -8px;
-        }
-
-        .tips-arrow-border{
-            display: none;
-        }
-    }
-
-.tooltips-icon {
-    position: relative;
-    .squareFontBox( @heading-FontColor,@smallest-FontSize,@bgColor-default,16px,4px,none,block );
-    border: 1px solid #adc3d6;
-    .inline-block();
-    margin: 0 5px;
-    cursor: default;
-    vertical-align: text-top;
-
-    > .tooltips{
-        .tooltips(@tooltips-bgColor1, @tooltips-BorderColor1);
-    };
-
-    &:hover {
-
-        > .tooltips {
-            display: block;
-        }
-    }
-}
 
 
 

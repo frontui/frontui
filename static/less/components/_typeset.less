@@ -1,0 +1,62 @@
+//排版工具类，尽量能在元素样式里面申明就不要用到这种附加类，否则会增加兼容性样式编写的难度，此类工具多用在对版面布局没影响的元素中
+.text-align-right {
+    text-align: right !important;
+
+    &.plural-btns > .btn {
+        margin-left: 10px;
+        margin-right: 0;
+    }
+}
+
+.text-align-left {
+    text-align: left !important;
+
+    &.plural-btns > .btn {
+        margin-right: 10px;
+        margin-left: 0;
+    }
+}
+
+.text-align-center {
+    text-align: center !important;
+
+    &.plural-btns > .btn {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+.text-align-justify {
+    text-align: justify !important;
+}
+
+.float-left {
+    float: left !important;
+}
+
+.float-right {
+    float: right !important;
+}
+
+.text-nowrap {
+    .text-hide();
+}
+
+.word-wrap {
+    .word-wrap();
+}
+
+.inline-block {
+    .inline-block();
+}
+
+.margin-top-20px {
+    margin-top: 20px !important;
+}
+
+.margin-top-40px {
+    margin-top: 40px !important;
+}
+
+
+  

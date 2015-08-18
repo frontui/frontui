@@ -1,0 +1,36 @@
+//过滤器行内结构
+.fliter-inline-wrap {
+    border: 1px solid @primary-BorderColor;
+    background-color: @bgColor-type1;
+    .clearfix();
+    padding: 12px 0 12px 76px;
+    position: relative;
+
+    > .lt {
+        line-height: @form-control-height - 10px;
+        font-size: @smaller-FontSize;
+        position: absolute;
+        top: 12px;
+        left: 15px;
+    }
+
+    .fliter-inline-width1 {
+        width: 140px;
+        float: left;
+        margin-left: 10px;
+        position: relative;
+    }
+
+    .fliter-inline-bar {
+        height: @form-control-height - 10px;
+        width: 10px;
+        text-align: center;
+        line-height: @form-control-height - 10px;
+        .float-item( left,block );
+        margin-left: 10px;
+    }
+
+    > .btn {
+        margin-left: 10px;
+    }
+}

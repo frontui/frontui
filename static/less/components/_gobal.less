@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+html {
+    font-size: 62.5%;
+}
+
+html,
+body {
+    .font-hei();
+    //height: 100%;
+    //width: 100%;
+}
+
+body {
+    font-size: @smaller-FontSize;
+    color: @default-FontColor;
+    background-color: @bgColor-default;
+    line-height: @line-height-base;
+
+    * {
+        .border-box();
+    }
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    font-weight: 500;
+    margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: @heading-FontColor;
+}
+
+h1,.h1 {
+    font-size: @h1-FontSize !important;
+}
+
+h2,.h2 {
+    font-size: @h2-FontSize !important;
+}
+
+h3,.h3 {
+    font-size: @h3-FontSize !important;
+}
+
+h4,.h4 {
+    font-size: @h4-FontSize !important;
+}
+
+h5,.h5 {
+    font-size: @h5-FontSize !important;
+}
+
+h6,.h6 {
+    font-size: @h6-FontSize !important;
+}
+
+.heading-FontColor {
+    color: @heading-FontColor !important;
+}
+
+.default-FontColor {
+    color: @default-FontColor !important;
+}
+
+.viceText-FontColor {
+    color: @viceText-FontColor !important;
+}
+
+.warning-FontColor {
+    color: @warning-FontColor !important;
+}
+
+.success-FontColor1 {
+    color: @success-FontColor1 !important;
+}
+
+.success-FontColor2 {
+    color: @success-FontColor2 !important;
+}
+
+.error-FontColor1 {
+    color: @error-FontColor1 !important;
+}
+
+.error-FontColor2 {
+    color: @error-FontColor2 !important;
+}
+
+.info-FontColor {
+    color: @info-FontColor !important;
+}
+
+.link-FontColor {
+    color: @link-FontColor !important;
+}
+
+.linkHover-FontColor {
+    color: @link-FontColor !important;
+}
+
+
+
+//辅助类工具
+.caret-down {
+    .arrow-up-or-down( border-top,4px,4px,@default-FontColor );
+}
+
+.caret-up {
+    .arrow-up-or-down( border-bottom,4px,4px,@default-FontColor );
+}
+
+.caret-left {
+    .arrow-left-or-right( border-right,4px,4px,@default-FontColor );
+}
+
+.caret-right {
+    .arrow-left-or-right( border-left,4px,4px,@default-FontColor );
+}
+
+.link-standard {
+    .link-standard();
+}
