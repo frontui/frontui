@@ -1,5 +1,5 @@
 {
 	"port": "8251",
-	"path": "../../svn/eWeb",
-	"staticPath": "../../svn/eWeb/static"
+	"path": "../../svn/frontui",
+	"staticPath": "../../svn/frontui/static"
 }

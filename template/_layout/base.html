@@ -16,20 +16,20 @@
         {% block css %}{% endblock %}
         
         <!--[if IE 8]>
-		    <link rel="stylesheet" type="text/css" href="{{ dist }}/css/ie-8.css?v={{ version }}">
+		    <link rel="stylesheet" type="text/css" href="{{ static }}/css/ie-8.css?v={{ version }}">
         <![endif]-->
 
         <!--[if lt IE 8]>
-		    <link rel="stylesheet" type="text/css" href="{{ dist }}/css/ie-76.css?v={{ version }}">
+		    <link rel="stylesheet" type="text/css" href="{{ static }}/css/ie-76.css?v={{ version }}">
         <![endif]-->
         
         <!-- 字体图标兼容 IE 76 样式 （因为 fonticon 的兼容样式在 less 编译中出错，所以直接用 css，不编译）-->   
         <!--[if lte IE 7]>
-            <link rel="stylesheet" type="text/css" href="{{ dist }}/iconfont-ie7/ie7.css?v={{ version }}">
+            <link rel="stylesheet" type="text/css" href="{{ static }}/iconfont-ie7/ie7.css?v={{ version }}">
         <![endif]-->
         <!-- 字体图标 IE 7 以下JS兼容 -->
         <!--[if lte IE 7]>
-		    <script type="text/javascript" src="{{ dist }}/iconfont-ie7/ie7.js?v={{ version }}"></script>
+		    <script type="text/javascript" src="{{ static }}/iconfont-ie7/ie7.js?v={{ version }}"></script>
         <![endif]-->
 
         <!-- html5 Dom 替换方案 以支持IE7 -->

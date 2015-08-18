@@ -1,0 +1,51 @@
+//分页
+.pagination-wrap {
+    .clearfix();
+    font-size: 0;
+    line-height: 0;
+    display: block;
+}
+
+.pagination {
+    .reset-list( left,block,@smallest-FontSize,@pagination-height );
+    .clearfix();
+    .inline-block();
+
+    > li {
+
+        > a {
+            display: block;
+            .link-custom( @viceText-FontColor,@viceText-FontColor,none );
+            border: 1px solid transparent;
+            text-align: center;
+            .rounded( 3px );
+            padding: 0 8px;
+
+            &:hover {
+                border-color: @primary-BorderColor;
+            }
+
+            &:active {
+                color: #fff;
+                border-color: @pagination-bgColor-1;
+                background-color: @pagination-bgColor-1;
+            }
+        }
+
+        > span {
+            color: @default-FontColor;
+            display: block;
+            padding: 0 8px;
+        }
+
+        &.active {
+
+            > a {
+                color: #fff;
+                border-color: @pagination-bgColor-1;
+                background-color: @pagination-bgColor-1;
+                cursor: default;
+            }
+        }
+    }
+}

@@ -1,0 +1,295 @@
+@import "_share";           //项目共用样式库
+
+/*
+--- UI ---
+*/
+
+@charset "UTF-8";
+
+header {
+    background-color: @domColor1;
+    height: 6px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.uiShow-body {
+    width: 100%;
+    min-width: 960px;
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+    padding: 0 20px 0 215px;
+
+    .uiShow-left,
+    .uiShow-right {
+        font-size: @smaller-FontSize;
+        line-height: @line-height-base;
+    }
+
+    .uiShow-left {
+        width: 215px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+    }
+
+    .uiShow-right {
+        min-width: 762px;
+        padding-bottom: 100px;
+    }
+}
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: @domColor5;
+  background-color: #f9f2f4;
+  .rounded( 4px );
+  margin: 0 5px;
+}
+
+.ui-section {
+    padding-top: 30px;
+
+    > h1 {
+        border-bottom: 6px solid @heading-FontColor;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .section-content {
+        padding: 20px 0;
+
+        > h3 {
+            color: @heading-FontColor;
+            .border-radius( 3px,3px,0,0 );
+            padding: 5px 15px;
+            border: 1px solid @primary-BorderColor * 0.9;
+        }
+    }
+}
+
+.ui-example {
+    border: 1px solid @primary-BorderColor * 0.9;
+    border-top: none;
+    padding: 0px 30px 30px 30px;
+    position: relative;
+
+    > .description {
+        font-size: @small-FontSize;
+        padding-top: 50px;
+        padding-bottom: 15px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid @secondary-BorderColor;
+    }
+
+    > table {
+        width: 100%;
+        max-width: 100%;
+
+        td {
+            padding: 10px 0;
+        }
+    }
+}
+
+.section-tip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    padding: 2px 15px;
+    .border-radius( 0,0,3px,0 );
+    background-color: @primary-BorderColor * 0.9;
+    line-height: 22px;
+    cursor: default;
+    color: #fff;
+    font-size: @smallest-FontSize;
+    max-width: 80%;
+}
+
+.ui-code {
+    background-color: @primary-BorderColor;
+    .border-radius( 0,0,3px,3px );
+    color: @default-FontColor;
+    padding: 8px 15px;
+    font-size: @smallest-FontSize;
+    border: 1px solid @primary-BorderColor * 0.9;
+    border-top: none;
+
+    > pre {
+
+        > code {
+            padding: 0;
+            font-size: 100%;
+            color: @default-FontColor;
+            background-color: transparent;
+            margin: 0;
+
+            > span {
+                color: @warning-FontColor;
+            }
+        }
+    }
+}
+
+//ui版面导航
+.ui-sidebar {
+    padding-top: 30px;
+    padding-bottom: 100px;
+    height: 100%;
+    overflow: auto;
+
+    .scroll-y-hidden {
+        width: 17px;
+        background-color: @bgColor-default;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+    }
+
+    .lv1,
+    .lv2 {
+        .reset-list( none,block,0,0 );
+
+        .sidebar-btn {
+            display: block;
+            font-size: @small-FontSize;
+            .link-custom( @default-FontColor,@warning-FontColor,none );
+            .transition( all,0.3s,ease,0 );
+            padding: 5px 18px 5px 15px;
+            text-align: right;
+            line-height: 1.4;
+            position: relative;
+        }
+    }
+
+    /*.lv1 {
+        
+        .lv2 {
+            display: none;
+        }
+    }*/
+
+    .lv2 {
+        padding-bottom: 10px;
+
+        .sidebar-btn {
+            font-size: @smaller-FontSize;
+            padding: 5px 18px 5px 15px;
+            color: @info-FontColor;
+        }
+    }
+}
+
+.lv1 > li.active > .sidebar-btn,
+.lv2 > li.active > .sidebar-btn {
+    color: @warning-FontColor;
+
+    &:after {
+        .form-notice-icon-font-family();
+        content: "\e602";
+        position: absolute;
+        top: 7px;
+        right: 0;
+    }
+}
+
+.lv1 > li.active {
+
+    /*.lv2 {
+        display: block;
+    }*/
+
+    > .sidebar-btn:after {
+        top: 8px;
+        right: 0;
+    }
+}
+
+//模态窗展示盒
+.put-modal-in-it {
+    height: 600px;
+    position: relative;
+    background: url( http://www.wefax.cn/Content/images/index/tu3.jpg ) center center no-repeat;
+    background-size: cover;
+
+    > .modal-background {
+        position: absolute;
+    }
+}
+
+@media ( max-height: 746px ) {
+
+    .ui-sidebar {
+
+        .lv1,
+        .lv2 {
+
+            .sidebar-btn {
+                font-size: @smaller-FontSize;
+                padding: 5px 18px 5px 15px;
+                text-align: right;
+            }
+
+            li.active .sidebar-btn {
+
+                &:after {
+                    top: 5px;
+                }
+            }
+        }
+
+            .lv1 > li.active {
+
+                > .sidebar-btn:after {
+                    top: 7px;
+                }
+            }
+
+        .lv2 {
+            padding-bottom: 5px;
+
+            .sidebar-btn {
+                font-size: @smallest-FontSize;
+                padding: 3px 18px 3px 15px;
+            }
+        }
+    }
+}
+
+// 回到顶部
+.back-top{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 100;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background: rgba(0,0,0,.5);
+
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+
+    font-size: 24px;
+    color: #fff;
+
+    transition: background .3s;
+
+    &:hover{
+        background: rgba(0,0,0,.6);
+    }
+    
+    .icon-chevron-thin-up{
+        background: none;
+    }
+}
