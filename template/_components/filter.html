@@ -1,0 +1,40 @@
+{% macro render(placeholder='') %}
+<form action="##" method="post" class="form-frame form-frame-filter fn-mb-10">
+    <div class="form-layer-gray-box">
+        <div class="form-group">
+            <label class="form-control-label">
+                <span>时间</span><em>：</em>
+            </label>
+            <div class="form-control-wrap">
+                <div class="form-control-check" data-toggle="switcher" data-keep="true" data-item=".filter-check-item">
+                    <label class="filter-check-item active"><input type="radio" name="month" checked />最近三个月</label>
+                    <label class="filter-check-item"><input type="radio" name="month" />三个月前</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label">
+                <span>业务类型</span><em>：</em>
+            </label>
+            <div class="form-control-wrap">
+                <div class="form-control-check" data-toggle="switcher" data-keep="true" data-item=".filter-check-item">
+                    <label class="filter-check-item active"><input type="radio" name="type" checked />全部</label>
+                    <label class="filter-check-item"><input type="radio" name="type" />充值</label>
+                    <label class="filter-check-item"><input type="radio" name="type" />提现</label>
+                    <label class="filter-check-item"><input type="radio" name="type" />交易</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label">
+                <span>关键字</span><em>：</em>
+            </label>
+            <div class="form-control-wrap form-control-helper">
+                <input type="text" class="form-control" placeholder="{{ placeholder }}" />
+
+                <button type="button" class="btn primary small-btn">搜索</button>
+            </div>
+        </div>
+    </div>
+</form>
+{% endmacro %}

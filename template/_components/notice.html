@@ -1,0 +1,14 @@
+{% macro wait(title='处理中...', text='请不要关闭浏览器，系统正在紧张处理中') %}
+<div class="notice-wrap waiting">
+    <div class="notice-box">
+        <span class="notice-img"></span>
+        <h3>
+            {{ title }}
+        </h3>
+        <p>
+            {{ text }}
+        </p>
+    </div>
+</div>
+<br/>
+{% endmacro %}
