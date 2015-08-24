@@ -60,4 +60,29 @@
             }
         }
     }
+
+    // 成功
+  &-success {
+    border: 2px solid @success-FontColor1;
+    color: @success-FontColor1;
+
+    > i {
+      &:before{
+        content: '\e281';
+        color: @success-FontColor1;
+      }
+    }
+  }
+
+  &-danger{
+    border: 2px solid @error-FontColor1;
+    color: @error-FontColor1;
+
+    > i {
+      &:before {
+        content: '\e205';
+        color: @error-FontColor1;
+      }
+    }
+  }
 }

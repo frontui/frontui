@@ -1,11 +1,11 @@
-@import "_normalize";       //ÏîÄ¿ÒýÓÃÑùÊ½³õÊ¼»¯
-@import "_config";          //ÏîÄ¿ÑùÊ½Éè¶¨Ïî
-@import "_mix";             //ÏîÄ¿ÑùÊ½¹¤¾ß
-@import "_font";            //ÏîÄ¿×ÖÌå
-@import "_fonticon";        //ÏîÄ¿×ÖÌåÍ¼±ê
-@import "_sprite";          //ÏîÄ¿Ñ©±ÌÍ¼
-@import "_animate.less";    //ÏîÄ¿ÒýÓÃCSS3¶¯»­¿â
-@import "_animation.less";    //½»»¥CSS3¶¯»­
+// @import "_normalize";       //ÃÃ®Ã„Â¿Ã’Ã½Ã“ÃƒÃ‘Ã¹ÃŠÂ½Â³ÃµÃŠÂ¼Â»Â¯
+@import "_config";          //ÃÃ®Ã„Â¿Ã‘Ã¹ÃŠÂ½Ã‰Ã¨Â¶Â¨ÃÃ®
+@import "_mix";             //ÃÃ®Ã„Â¿Ã‘Ã¹ÃŠÂ½Â¹Â¤Â¾ÃŸ
+@import "_font";            //ÃÃ®Ã„Â¿Ã—Ã–ÃŒÃ¥
+@import "_fonticon";        //ÃÃ®Ã„Â¿Ã—Ã–ÃŒÃ¥ÃÂ¼Â±Ãª
+@import "_sprite";          //ÃÃ®Ã„Â¿Ã‘Â©Â±ÃŒÃÂ¼
+// @import "_animate.less";    //ÃÃ®Ã„Â¿Ã’Ã½Ã“ÃƒCSS3Â¶Â¯Â»Â­Â¿Ã¢
+// @import "_animation.less";    //Â½Â»Â»Â¥CSS3Â¶Â¯Â»Â­
 
 /*
 --- share ---
@@ -24,7 +24,7 @@ h1,h2,h3,h4,h5,h6,p {
     *width: auto;
 }
 
-//°´Å¥Àà
+//Â°Â´Ã…Â¥Ã€Ã 
 .btn {
     *line-height: @base-BtnHeight - 8px;
 
@@ -73,7 +73,7 @@ a.btn {
     }
 }
 
-//±íµ¥Àà
+//Â±Ã­ÂµÂ¥Ã€Ã 
 .form-frame {
 
     .form-layer1 {
@@ -112,7 +112,7 @@ a.btn {
         .form-control-modal,
         .form-control-date {
 
-            &.smallsize { // @form-control-height ¼õ10ÏñËØ
+            &.smallsize { // @form-control-height Â¼Ãµ10ÃÃ±Ã‹Ã˜
 
                 .form-control-dropdown-value,
                 .form-control-modal-value,
@@ -222,7 +222,7 @@ input.form-control {
     *zoom: 1;
     *display: inline;
 
-    &.smallsize { // @form-control-height ¼õ10ÏñËØ
+    &.smallsize { // @form-control-height Â¼Ãµ10ÃÃ±Ã‹Ã˜
         .form-control,
         .form-control-dropdown-value,
         .form-control-modal-value,
@@ -401,7 +401,7 @@ input.form-control {
     }
 }
 
-//±í¸ñÀà
+//Â±Ã­Â¸Ã±Ã€Ã 
 .tables-title {
 
     > .table-title-btns {
@@ -423,7 +423,7 @@ input.form-control {
     }
 }
 
-//Ä£Ì¬´°¿Ú
+//Ã„Â£ÃŒÂ¬Â´Â°Â¿Ãš
 .modal-layer {
     *position: absolute;
     *top: 50%;
@@ -456,7 +456,7 @@ input.form-control {
     }
 }
 
-//±êÇ©Ò³
+//Â±ÃªÃ‡Â©Ã’Â³
 .tabs-wrap {
 
     .tab-search-wrap {
@@ -479,7 +479,7 @@ input.form-control {
     }
 }
 
-//ÒµÎñÁ÷³ÌÌáÊ¾
+//Ã’ÂµÃŽÃ±ÃÃ·Â³ÃŒÃŒÃ¡ÃŠÂ¾
 .notice-wrap {
 
     &.in-modal {
@@ -526,7 +526,7 @@ input.form-control {
     }
 }
 
-//²½Öè
+//Â²Â½Ã–Ã¨
 .steps-box {
     *height: 85px;
     *margin-top: 0;
@@ -584,7 +584,7 @@ input.form-control {
     }
 }
 
-//Êý¾ÝÍ³¼Æ²¿¼þ
+//ÃŠÃ½Â¾ÃÃÂ³Â¼Ã†Â²Â¿Â¼Ã¾
 .date-count-ul {
 
     > li {
@@ -596,7 +596,7 @@ input.form-control {
     }
 }
 
-//¾¯Ê¾
+//Â¾Â¯ÃŠÂ¾
 .alert {
 
     > em {
@@ -617,9 +617,31 @@ input.form-control {
             }
         }
     }
+
+    &.alert-success {
+
+        > i {
+            .icon-check_circle-ie76();
+
+            &:before {
+                *content: "";
+            }
+        }
+    }
+
+    &.alert-danger {
+        border-color: @warning-FontColor;
+        > i {
+            .icon-cancel-ie76();
+
+            &:before {
+                *content: "";
+            }
+        }
+    }
 }
 
-//Ö÷µ¼º½
+//Ã–Ã·ÂµÂ¼ÂºÂ½
 .main-nav {
 
     > li {
@@ -627,7 +649,7 @@ input.form-control {
     }
 }
 
-//¹ýÂËÆ÷ÐÐÄÚ½á¹¹
+//Â¹Ã½Ã‚Ã‹Ã†Ã·ÃÃÃ„ÃšÂ½Ã¡Â¹Â¹
 .fliter-inline-wrap {
 
     .fliter-inline-width1 {
@@ -635,7 +657,7 @@ input.form-control {
     }
 }
 
-//ÒøÐÐ¿¨ÁÐ±í
+//Ã’Ã¸ÃÃÂ¿Â¨ÃÃÂ±Ã­
 .bankcard-list {
 
     .bank-card-btn {
@@ -652,7 +674,7 @@ input.form-control {
     }
 }
 
-//ÍøÉÏÒøÐÐÑ¡Ôñ
+//ÃÃ¸Ã‰ÃÃ’Ã¸ÃÃÃ‘Â¡Ã”Ã±
 .ebanks {
 
     .ebank-label {
@@ -680,7 +702,7 @@ input.form-control {
     }
 }
 
-//Ãæ°üÐ¼µ¼º½
+//ÃƒÃ¦Â°Ã¼ÃÂ¼ÂµÂ¼ÂºÂ½
 .breadcrumb {
 
     > li {
@@ -690,6 +712,29 @@ input.form-control {
             > i {
                 *margin-left: 2px;
             }
+        }
+    }
+}
+
+// 
+.form-group{
+    .form-control-wrap{
+        position: relative;
+        min-width: 310px;
+
+
+    }
+    .drop-select-province,
+    .drop-select-city {
+        width: 150px;
+       .form-control-dropdown-value{
+           float: left;
+           width: 80px;
+       }
+
+        .form-control-dropdown-menu{
+            width: 147px;
+            overflow: hidden;
         }
     }
 }
