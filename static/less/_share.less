@@ -40,7 +40,143 @@
 @import "components/_breadcrumb";        //面包屑导航
 @import "components/_amountRemind";      //可提现金额结构
 
+//可提现金额提示结构
+.ar-wrapper {
+    border: 4px solid @primary-BorderColor;
+    border-bottom: none;
+    position: relative;
+}
 
+.ar-top {
+    padding: 15px 0;
+    .clearfix();
+    border-bottom: 4px solid @primary-BorderColor;
+
+    .amountbox {
+        width: 50%;
+        float: left;
+        padding: 0 30px;
+
+        > h3 {
+            position: relative;
+
+            > span {
+                position: absolute;
+                right: 0;
+                top: 4px;
+                font-size: @smallest-FontSize;
+                color: @viceText-FontColor;
+            }
+        }
+
+        > h2 {
+            color: @warning-FontColor;
+        }
+
+        &.left {
+            border-right: 1px solid @primary-BorderColor;
+        }
+    }
+}
+
+.sh-btn {
+    width: 148px;
+    height: 28px;
+    line-height: 28px;
+    display: block;
+    .link-standard();
+    text-align: center;
+    font-size: @smallest-FontSize;
+    .border-radius( 0,0,5px,5px );
+    position: absolute;
+    bottom: -28px;
+    right: -4px;
+    background-color: @primary-BorderColor;
+}
+
+.ar-bottom {
+    background-color: @bgColor-type1;
+    border-bottom: 4px solid @primary-BorderColor;
+    padding: 20px 0 20px 100px;
+    position: relative;
+    font-size: @smallest-FontSize;
+    display: none;
+
+    > p {
+        color: @heading-FontColor;
+        position: absolute;
+        left: 26px;
+
+        &.a {
+            top: 20px;
+        }
+
+        &.b {
+            top: 52px;
+        }
+    }
+
+    > div {
+        position: relative;
+        overflow: hidden;
+        height: 46px;
+
+        .arlist {
+            .clearfix;
+            .reset-list( left,block,@smaller-FontSize,@line-height-base );
+
+            > li {
+                width: 100%;
+
+                > ul {
+                    .clearfix;
+                    .reset-list( left,block,@smallest-FontSize,1.2 );
+
+                    > li {
+                        border-left: 1px solid @primary-BorderColor;
+                        text-align: center;
+                        padding: 0 15px;
+                        width: 14.25%;
+                        overflow: hidden;
+
+                        > p {
+                            color: @viceText-FontColor;
+                            padding-bottom: 20px;
+                        }
+
+                        > h6 {
+                            .text-hide();
+                        }
+
+                        &:first-child {
+                            border-left: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ar-arrow {
+    .link-custom( @viceText-FontColor,@linkHover-FontColor,none );
+    display: block;
+    width: 30px;
+    text-align: center;
+    height: 46px;
+    line-height: 46px;
+    font-size: @small-FontSize;
+    position: absolute;
+    top: 0;
+
+    &.left {
+        left: 0;
+    }
+
+    &.right {
+        right: 0;
+    }
+}
 
 
 
