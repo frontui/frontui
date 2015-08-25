@@ -1,4 +1,4 @@
-//å¯æç°é‡‘é¢æç¤ºç»“æ„
+//¿ÉÌáÏÖ½ğ¶îÌáÊ¾½á¹¹
 .ar-wrapper {
     border: 4px solid @primary-BorderColor;
     border-bottom: none;
@@ -113,5 +113,25 @@
                 }
             }
         }
+    }
+}
+
+.ar-arrow {
+    .link-custom( @viceText-FontColor,@linkHover-FontColor,none );
+    display: block;
+    width: 30px;
+    text-align: center;
+    height: 46px;
+    line-height: 46px;
+    font-size: @small-FontSize;
+    position: absolute;
+    top: 0;
+
+    &.left {
+        left: 0;
+    }
+
+    &.right {
+        right: 0;
     }
 }
