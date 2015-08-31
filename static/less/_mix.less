@@ -449,3 +449,24 @@
     }
 }
 
+// 占位符颜色
+.input-placeholder(@color: #999, @fm: 'Microsoft Yahei'){
+    input::-webkit-input-placeholder { /* WebKit browsers */
+        color:    @color;
+        font-family: @fm;
+    }
+    input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:    @color;
+        opacity:  1;
+        font-family: @fm;
+    }
+    input::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:   @color;
+        opacity:  1;
+        font-family: @fm;
+    }
+    input:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color:    @color;
+        font-family: @fm;
+    }
+}
