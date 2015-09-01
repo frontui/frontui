@@ -1,0 +1,338 @@
+//收银台独立样式
+.casherheader-wrap {
+    padding-top: 4px;
+    background: url("@{images-url}casherheader-color-bar.jpg") #fff center top no-repeat;
+    background-size: 100% auto;
+    border-bottom: 2px solid @primary-BorderColor;
+}
+
+.casherheader {
+    max-width: 940px;
+    min-width: 700px;
+    margin: 0 auto;
+    padding: 10px 0;
+    .clearfix();
+
+    > h1 {
+        float: left;
+        line-height: @casherheader-height;
+    }
+
+    > h2 {
+        float: left;
+        line-height: @casherheader-height;
+        color: @default-FontColor;
+        border-left: 1px solid @primary-BorderColor * 0.7;
+        margin-left: 24px;
+        padding-left: 24px;
+    }
+
+    > img {
+        height: @casherheader-height;
+        .float-item( left,block );
+    }
+}
+
+.ch-right {
+    float: right;
+    padding-top: 12px;
+
+    &.unlogin {
+        padding-top: 0;
+        text-align: right;
+
+        > h4 {
+            font-weight: bold;
+        }
+
+        .ch-link {
+            font-size: @smallest-FontSize;
+        }
+    }
+}
+
+.ch-account-name {
+    font-size: @smaller-FontSize;
+}
+
+.ch-link {
+    .link-standard();
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid @primary-BorderColor * 0.7;
+}
+
+.casher-main-wrap {
+    margin: 0 auto;
+    max-width: 940px;
+    min-width: 700px;
+    padding-top: 30px;
+    padding-bottom: 86px + 100px;
+}
+
+.casher-bill-topic-wrap {
+    position: relative;
+    padding-right: 50%;
+    margin-bottom: 30px;
+
+    > h4 {
+        font-weight: bold;
+    }
+
+    > h5 {
+        color: @viceText-FontColor;
+        padding-top: 5px;
+    }
+}
+
+.casher-bill-amount {
+    color: @viceText-FontColor;
+    font-size: @smaller-FontSize;
+    line-height: @line-height-base;
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+
+    > span {
+        font-size: @larger-FontSize;
+        color: @warning-FontColor;
+        padding: 0 10px;
+        font-weight: bold;
+    }
+}
+
+.casher-ebanks {
+    margin: 0 auto;
+    width: 648px + 36px;
+    padding-left: 36px;
+}
+
+.casher-notice-p {
+    width: 612px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.casher-tabs-panel {
+    border: 1px solid @primary-BorderColor;
+    border-top: none;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.casher-record-topic {
+    padding-bottom: 10px;
+    position: relative;
+    font-weight: bold;
+}
+
+.casher-form-frame {
+    position: relative;
+    padding-top: 60px;
+}
+
+.casher-delivery-note {
+    font-size: @large-FontSize;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.casher-invoice-bg {
+    background-color: @bgColor-type1;
+}
+
+.transaction-notice-bg {
+    background-color: @bgColor-type1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    padding-top: 40px;
+}
+
+.transaction-notice-wrap {
+    width: 900px;
+    margin: 0 auto 30px auto;
+    color: #000;
+    background: #fff;
+    padding: 14px 0;
+}
+
+.transaction-notice-box {
+    margin: 0 14px;
+    border: 1px solid @primary-BorderColor;
+    position: relative;
+
+    > h2 {
+        text-align: center;
+        font-weight: bold;
+        padding: 25px 0;
+    }
+
+    > .bank {
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        height: 30px;
+        display: block;
+    }
+
+    > p {
+        padding: 0 0 10px 35px;
+        font-weight: bold;
+
+        &.print-time {
+            padding: 35px;
+            font-weight: 500;
+            text-align: right;
+        }
+    }
+}
+
+.transaction-notice {
+    margin: 0 25px;
+    padding-bottom: 35px;
+
+    > table {
+        width: 100%;
+        table-layout: fixed;
+
+        td {
+            padding: 10px;
+            .word-wrap();
+        }
+    }
+}
+
+.transaction-notice-detail {
+    margin: 0 35px;
+    padding-bottom: 35px;
+
+    > table {
+        width: 100%;
+        table-layout: fixed;
+
+        th,td {
+            padding: 25px 10px;
+            border: 1px solid @heading-FontColor;
+            text-align: center;
+        }
+    }
+}
+
+.transaction-notice-bottom {
+    position: relative;
+    padding-right: 40%;
+    padding-left: 35px;
+    min-height: 74px;
+
+    > img {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 35px;
+    }
+}
+
+
+
+
+.mod-statement {
+  width: 900px;
+  margin: 0 auto;
+  color: #000;
+}
+.mod-statement .statement-bg {
+  background: #fff;
+  padding: 13px;
+  margin-bottom: 50px;
+}
+.mod-statement .statement {
+  border: 1px solid #cecece;
+  padding: 40px 0 30px 0;
+  position: relative;
+}
+.mod-statement .statement .seal {
+  background: url(../images/seal.png) no-repeat 0 0;
+  width: 172px;
+  height: 96px;
+  position: absolute;
+  bottom: 45px;
+  left: 60px;
+}
+.mod-statement .statement .bank-large {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  width: 210px;
+  height: 50px;
+}
+.mod-statement .statement .ea {
+  position: absolute;
+  bottom: 80px;
+  left: 130px;
+}
+.mod-statement .statement h1 {
+  text-align: center;
+  font-size: 18px;
+  height: 31px;
+  margin: 0;
+  font-weight: normal;
+}
+.mod-statement .statement .statement-info {
+  padding: 30px 0 0 50px;
+}
+.mod-statement .statement .statement-info li {
+  list-style: none;
+  font-size: 12px;
+  line-height: 20px;
+}
+.mod-statement .statement .statement-tab {
+  margin: 20px 55px 0 55px;
+}
+.mod-statement .statement .statement-tab th,
+.mod-statement .statement .statement-tab td {
+  border: 1px solid #000;
+}
+.mod-statement .statement .statement-tab th {
+  padding: 20px 13px 20px 13px;
+}
+.mod-statement .statement .statement-tab td {
+  padding: 10px 10px 10px 10px;
+}
+.mod-statement .statement .trade-tab {
+  padding: 35px 0 0 45px;
+}
+.mod-statement .statement .trade-tab li {
+  line-height: 26px;
+  font-size: 14px;
+  list-style: none;
+}
+.mod-statement .statement .trade-tab li .width {
+  padding: 0 70px 0 170px;
+}
+.mod-statement .statement .trade-tab li.right {
+  padding: 0 0 0 230px;
+  line-height: 24px;
+}
+.mod-statement .statement .trade-tab li.top {
+  padding-top: 80px;
+  padding-bottom: 10px;
+}
+.mod-statement .print-btn .btn {
+  width: 200px;
+  margin: 0 auto;
+  background: #f37e28;
+  columns: #fff;
+  border-bottom: 2px solid #d06b22;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  height: 46px;
+  line-height: 46px;
+}
+
+
