@@ -24,7 +24,7 @@ h1,h2,h3,h4,h5,h6,p {
     *width: auto;
 }
 
-//°´Å¥Àà
+//按钮
 .btn {
     *line-height: @base-BtnHeight - 8px;
 
@@ -73,7 +73,7 @@ a.btn {
     }
 }
 
-//±íµ¥Àà
+//表单
 .form-frame {
 
     .form-layer1 {
@@ -112,7 +112,7 @@ a.btn {
         .form-control-modal,
         .form-control-date {
 
-            &.smallsize { // @form-control-height ¼õ10ÏñËØ
+            &.smallsize { // @form-control-height
 
                 .form-control-dropdown-value,
                 .form-control-modal-value,
@@ -222,7 +222,7 @@ input.form-control {
     *zoom: 1;
     *display: inline;
 
-    &.smallsize { // @form-control-height ¼õ10ÏñËØ
+    &.smallsize { // @form-control-height
         .form-control,
         .form-control-dropdown-value,
         .form-control-modal-value,
@@ -401,7 +401,7 @@ input.form-control {
     }
 }
 
-//±í¸ñÀà
+//表格
 .tables-title {
 
     > .table-title-btns {
@@ -423,7 +423,7 @@ input.form-control {
     }
 }
 
-//Ä£Ì¬´°¿Ú
+//模态窗
 .modal-layer {
     *position: absolute;
     *top: 50%;
@@ -456,7 +456,7 @@ input.form-control {
     }
 }
 
-//±êÇ©Ò³
+//标签页
 .tabs-wrap {
 
     .tab-search-wrap {
@@ -479,7 +479,7 @@ input.form-control {
     }
 }
 
-//ÒµÎñÁ÷³ÌÌáÊ¾
+//警告
 .notice-wrap {
 
     &.in-modal {
@@ -526,7 +526,7 @@ input.form-control {
     }
 }
 
-//²½Öè
+//步骤流程图
 .steps-box {
     *height: 85px;
     *margin-top: 0;
@@ -584,7 +584,6 @@ input.form-control {
     }
 }
 
-//Êý¾ÝÍ³¼Æ²¿¼þ
 .date-count-ul {
 
     > li {
@@ -596,7 +595,7 @@ input.form-control {
     }
 }
 
-//¾¯Ê¾
+//警示
 .alert {
 
     > em {
@@ -641,7 +640,7 @@ input.form-control {
     }
 }
 
-//Ö÷µ¼º½
+//主导航
 .main-nav {
 
     > li {
@@ -649,7 +648,7 @@ input.form-control {
     }
 }
 
-//¹ýÂËÆ÷ÐÐÄÚ½á¹¹
+//行内过滤解构
 .fliter-inline-wrap {
 
     .fliter-inline-width1 {
@@ -657,7 +656,7 @@ input.form-control {
     }
 }
 
-//ÒøÐÐ¿¨ÁÐ±í
+//网上银行
 .bankcard-list {
 
     .bank-card-btn {
@@ -674,7 +673,7 @@ input.form-control {
     }
 }
 
-//ÍøÉÏÒøÐÐÑ¡Ôñ
+//网上银行
 .ebanks {
 
     .ebank-label {
@@ -702,7 +701,7 @@ input.form-control {
     }
 }
 
-//Ãæ°üÐ¼µ¼º½
+//面包屑
 .breadcrumb {
 
     > li {
@@ -716,7 +715,7 @@ input.form-control {
     }
 }
 
-// 
+//表单
 .form-group{
     .form-control-wrap{
         position: relative;
@@ -727,6 +726,7 @@ input.form-control {
     .drop-select-province,
     .drop-select-city {
         width: 150px;
+
        .form-control-dropdown-value{
            float: left;
            width: 80px;
@@ -738,3 +738,27 @@ input.form-control {
         }
     }
 }
+
+// 可提金额统计
+.ar-bottom{
+  &>div {
+
+    .arlist {
+      > li {
+        > ul {
+          > li{
+            padding: 0;
+            width: percentage(1/7.1);
+            p, h6{
+              margin: 0 15px;
+            }
+            p{
+              padding-bottom: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
