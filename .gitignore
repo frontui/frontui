@@ -27,7 +27,6 @@ build/Release
 node_modules
 
 bower_components
-svn.json
 
 static/css
 static/css/**/**
