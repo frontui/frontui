@@ -5,6 +5,10 @@
   "authors": [
     "frontpay"
   ],
+  "main": [
+    "js/ui.js",
+    "less/_share.less"
+  ],
   "license": "Apache-2.0",
   "ignore": [
     "**/.*",
