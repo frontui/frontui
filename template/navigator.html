@@ -1,0 +1,9 @@
+{% macro render(items, cur, expand='fn-mb-10') %}
+    <div class="main-nav-wrap {{ expand }}">
+        <ul class="main-nav col-span-5">
+            {% for item in items %}
+            <li {% if loop.index == cur %}class="current"{% endif %}><a href="{{ item.url }}">{{ item.text }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endmacro %}

@@ -1,0 +1,7 @@
+{% macro render(expand='alert-warning', text='') %}
+    <div class="alert {{ expand }}">
+        <i></i>
+        <em></em>
+        {{ text }}
+    </div>
+{% endmacro %}

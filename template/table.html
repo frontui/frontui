@@ -1,0 +1,33 @@
+{% macro render(data, expand, cols) %}
+    <table class="table {{ expand }}">
+        {{ cols }}
+        <thead>
+            <tr>
+            {% for th in data.thead %}
+                <th>{{ th }}</th>
+            {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            
+            {% for item in data.items %}    
+            <tr>  
+                {% for i in item %}
+                <td>{{ i }}</td>                
+                {% endfor %}
+            </tr>           
+            {% endfor %}           
+        </tbody>
+    </table>
+{% endmacro %}
+
+{% macro title(text='表格标题', btns = '', expand='') %}
+<div class="tables-title {{ expand }}">
+    {{ text }}
+    {% if btns %}
+        <div class="table-title-btns">
+            {{ btns }}
+        </div>
+    {% endif %}
+</div>
+{% endmacro %}

@@ -1,0 +1,16 @@
+{% macro render(list) %}
+<ol class="breadcrumb">
+	{% for ls in list %}
+    <li>
+    	{% if ls.link %}
+	        <a href="{{ ls.link }}">
+	            {{ ls.text }}
+	            <i class="icon-chevron-thin-right"></i>
+	        </a>
+        {% else %}
+        	{{ ls.text }}
+        {% endif %}
+    </li>
+    {% endfor %}
+</ol>
+{% endmacro %}
