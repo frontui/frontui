@@ -1,0 +1,28 @@
+{% macro render(expand='success', title='成功', desc='', links='') %}
+    <div class="notice-wrap {{ expand }}">
+      <div class="notice-box">
+          <span class="notice-img"></span>
+          <h3>
+              {{ title }}
+          </h3>
+          <p>
+              {{ desc }}
+          </p>
+          {{ links }}
+      </div>
+  </div>
+{% endmacro %}
+
+{% macro modal(expand='success', title='成功', desc='') %}
+    <div class="notice-wrap {{ expand }} in-modal">
+        <div class="notice-box">
+            <span class="notice-img"></span>
+            <h3>
+                {{ title }}
+            </h3>
+            <p>
+               {{ desc }}
+            </p>
+        </div>
+    </div>
+{% endmacro %}

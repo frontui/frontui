@@ -1,0 +1,49 @@
+{% macro render(expand) %}
+    <div class="pagination-wrap {{ expand }}"> 
+       <ul class="pagination"> 
+          <li> 
+             <a href="#..."> 上一页 </a> 
+          </li> 
+          <li class="active"> 
+             <a href="#..."> 1 </a> 
+          </li> 
+          <li> 
+             <a href="#..."> 2 </a> 
+          </li> 
+          <li> 
+             <a href="#..."> 3 </a> 
+          </li> 
+          <li> 
+             <a href="#..."> 4 </a> 
+          </li> 
+          <li> 
+             <a href="#..."> 5 </a> 
+          </li> 
+          <li> 
+             <a href="#..."> 6 </a> 
+          </li> 
+          <li> 
+             <a href="#..."> 7 </a> 
+          </li> 
+          <li> 
+             <a href="#..."> 8 </a> 
+          </li> 
+          <li> 
+             <span> ... </span> 
+          </li> 
+          <li> 
+             <a href="#..."> 100 </a> 
+          </li> 
+          <li> 
+             <a href="#..."> 下一页 </a> 
+          </li> 
+       </ul> 
+    </div>
+{% endmacro %}
+
+{% macro ajax(id='j-page', expand='') %}
+    <div class="pagination-wrap {{ expand }}"> 
+       <ul id="{{ id }}" class="pagination"> 
+       </ul> 
+    </div>
+{% endmacro %}
