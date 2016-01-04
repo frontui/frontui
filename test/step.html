@@ -1,0 +1,18 @@
+{% macro render(expand='alert-warning', text1='1', text2='2', text3='3') %}
+    <div class="steps-wrap {{ expand }}">
+        <div class="steps-box">
+            <div class="step-bars">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+                <div class="bar4"></div>
+            </div>
+            <span class="step step1">1</span>
+            <span class="step step2">2</span>
+            <span class="step step3">3</span>
+            <p class="step-title title1">{{ text1 }}</p>
+            <p class="step-title title2">{{ text2 }}</p>
+            <p class="step-title title3">{{ text3 }}</p>
+        </div>
+    </div>
+{% endmacro %}

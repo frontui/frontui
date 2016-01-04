@@ -1,0 +1,19 @@
+{% macro render(id='j-chart', height=254, expand) %}
+    <div class="chart-wrap {{ expand }}"> 
+      <div id="{{ id }}" style="width: 100%; height: {{ height }}px;"></div> 
+    </div>
+{% endmacro %}
+
+{% macro title(title='交易数据统计', small, btns, expand='') %}
+<div class="chart-title"> 
+   {{title}} 
+   {% if small %}
+   <small>{{ small }}</small> 
+   {% endif %}
+   {% if btns %}
+   <div class="chart-title-btns"> 
+      {{ btns }}
+   </div> 
+   {% endif %}
+</div>
+{% endmacro %}
