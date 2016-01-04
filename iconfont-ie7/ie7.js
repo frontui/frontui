@@ -13,6 +13,13 @@
 		el.innerHTML = '<span style="font-family: \'fonticon\'">' + entity + '</span>' + html;
 	}
 	var icons = {
+		'icon-drawer2': '&#xe900;',
+		'icon-browser': '&#xe607;',
+		'icon-calendar': '&#xe608;',
+		'icon-chevron-thin-down': '&#xe600;',
+		'icon-chevron-thin-left': '&#xe601;',
+		'icon-chevron-thin-right': '&#xe602;',
+		'icon-chevron-thin-up': '&#xe603;',
 		'icon-error': '&#xe000;',
 		'icon-error_outline': '&#xe001;',
 		'icon-add': '&#xe069;',
@@ -31,12 +38,6 @@
 		'icon-help': '&#xe604;',
 		'icon-info': '&#xe605;',
 		'icon-info-outline': '&#xe606;',
-		'icon-browser': '&#xe607;',
-		'icon-calendar': '&#xe608;',
-		'icon-chevron-thin-down': '&#xe600;',
-		'icon-chevron-thin-left': '&#xe601;',
-		'icon-chevron-thin-right': '&#xe602;',
-		'icon-chevron-thin-up': '&#xe603;',
 		'0': 0
 		},
 		els = document.getElementsByTagName('*'),
