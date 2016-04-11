@@ -1,6 +1,6 @@
 {
   "name": "frontui",
-  "version": "1.2.8",
+  "version": "1.2.10",
   "description": "scaffolding fron frontpay Front-End Develop",
   "main": "index.js",
   "scripts": {
