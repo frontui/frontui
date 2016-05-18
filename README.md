@@ -14,3 +14,8 @@
 	* animate - animated动画库less文件
 	* components ui组件样式
 	* ...
+
+
+## Log
+
+* `2016-04-11` 更新 `datetimepicker`的 icon 可点击
