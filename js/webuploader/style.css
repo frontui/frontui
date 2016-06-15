@@ -15,6 +15,11 @@
 .webuploader-container input:focus {
     outline: none;
 }
+.webuploader-container label {
+    position: absolute;
+    top:0;
+    left: 0;
+}
 .img-editor {
     display: none;
     position: absolute;
