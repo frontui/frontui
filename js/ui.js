@@ -1,5 +1,5 @@
 /*! 
-*  frontui v1.3.5
+*  frontui v1.3.6
 *  by frontpay FE Team
 *  (c) 2017-8-8 www.frontpay.cn
 *  Licensed under Apache License
